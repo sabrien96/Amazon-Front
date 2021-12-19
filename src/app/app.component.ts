@@ -11,18 +11,12 @@ export class AppComponent {
   allcategory: any;
   currentLang: any;
   obj: { en: string, ar: string } = { en: 'english', ar: 'عربي' }
-  constructor(private filter: FilterService,
+  constructor(
     public translate: TranslateService) {
-
-    this.filter.getProductByCategory('fashion').subscribe((data) => {
-      console.log(data);
-      this.allcategory = data;
-    });
     this.currentLang = localStorage.getItem('currentLang') || 'en'
     this.translate.use(this.currentLang);
     this.translate.onLangChange.subscribe(()=>{
-      console.log(this.translate);
-      
+      // console.log(this.translate);
     })
 
   }

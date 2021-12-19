@@ -12,7 +12,7 @@ export class ProductsService {
 
   //get all products
   getAllProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(`${env.api}/products`).pipe(
+    return this.http.get<IProduct[]>(`${env.api}products`).pipe(
       catchError(err => { return throwError(err.message); })
     )
   }

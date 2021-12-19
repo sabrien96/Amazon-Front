@@ -57,12 +57,7 @@ export class MainHeaderComponent implements OnInit {
     // this.getNumberOfCarts();
 
   }
-  ngAfterViewInit(): void {
-
-    console.log("listen to cart lenght: ", this.lenghtOfItems);
-
-  }
-
+  
   menuLisItems = [
     {
       id: 1,
@@ -131,7 +126,7 @@ export class MainHeaderComponent implements OnInit {
     this.filterServe.getAllCategory().subscribe(
       (data) => {
         this.categeories = data;
-        console.log('all my categories', this.categeories);
+        // console.log('all my categories', this.categeories);
       },
       (err) => {
         console.log('from header: ', err);

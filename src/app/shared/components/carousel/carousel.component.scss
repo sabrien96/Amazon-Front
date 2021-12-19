@@ -1,0 +1,28 @@
+.carousel{
+ 
+}
+.category-container {
+  height: 15rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 60px;
+  margin-right: 60px;
+  // background-color: brown;
+  align-items: center;
+  justify-content: flex-start;
+  .items-container {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    h6{
+      margin-top: 10px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
