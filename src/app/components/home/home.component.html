@@ -5,36 +5,93 @@
     </div>
   </div>
   <div class="row row2">
-    <div class="col-sm-2">
-      <h6>Categories</h6>
-      <form  [formGroup]="checkboxForm">
-        <div class="form-check" *ngFor="let cate of allCategories">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" [value]="cate.name"
-             formControlName="checkbox" (change)="onCheckChange($event)">
-            {{cate.name}}
-          </label>
-        </div>
-        {{checkboxForm.value|json}}
-      </form>
-      
+    <div class="col-sm-3">
+
+      <!-- filter by category -->
+      <div class="category">
+        <h6>Categories</h6>
+        <form [formGroup]="checkboxForm">
+          <div class="form-check" *ngFor="let cate of allCategories">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" [value]="cate.name" formControlName="checkbox"
+                (change)="onCheckChange($event)">
+              {{cate.name}}
+            </label>
+          </div>
+          {{checkboxForm.value|json}}
+        </form>
+      </div>
+
+      <!-- filter by price -->
+      <div class="price">
+        <h6>Price</h6>
+        <a>Under EGP400</a>
+        <a>EGP400 to EGP800</a>
+        <a>EGP800 to EGP1,200</a>
+        <a>EGP1,200 to EGP1,600</a>
+        <a>EGP1,600 & above</a>
+      </div>
+      <!-- filter by discount -->
+      <div class="discount">
+        <h6>Discount</h6>
+        <a>10% off or more</a>
+        <a>20% off or more</a>
+        <a>30% off or more</a>
+        <a>50% off or more</a>
+      </div>
+      <!-- filter by average -->
+      <div class="average">
+        <h6>Average customer review</h6>
+        <div class="rate"> <i class="fas fa-star"></i><a>& up</a></div>
+        <div class="rate"> <i class="fas fa-star"></i><a>& up</a></div>
+        <div class="rate"> <i class="fas fa-star"></i><a>& up</a></div>
+        <div class="rate"> <i class="fas fa-star"></i><a>& up</a></div>
+
+      </div>
+
     </div>
-    <div class="col-sm-10">
+    <!-- show products cards -->
+    <div class="col-sm-9">
       <div class="container-fluid">
+        <!-- product template -->
+        <ng-template #products>
         <div class="row">
-          <div class="col-sm-6 col-md-3" *ngFor="let item of productsList">
-            <div class="card" style="height:fit-content">
-              <img class="card-img-top" [src]="item.image[0]"  alt="Card image cap">
-              <div class="card-body">
-                <p class="card-title">{{item.name|slice:0:50}}</p>
-                <p class="card-text">{{item.price}}</p>
-                <a href="#" class="stretched-link"></a>
-              </div>
-            </div>
+          <div class="col-sm-6 col-md-4 mx-auto" *ngFor="let item of pagedItems">
+            <app-product-card [product]="item"></app-product-card>
           </div>
         </div>
+
+        <div class="row">
+          <!-- pagination -->
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <!-- <li *ngIf="pager.currentPage>1" class="page-item">
+                <a (click)="setPage(1)" class="page-link page-link-btn">First</a>
+              </li> -->
+            <li *ngIf="pager.currentPage>1" class="page-item">
+              <a (click)="setPage(pager.currentPage - 1)" class="page-link page-link-btn">Prev</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+              <a (click)="setPage(page)" class="page-link ">{{page}}</a>
+            </li>
+            <li *ngIf="pager.currentPage<pager.totalPages" class="page-item">
+              <a (click)="setPage(pager.currentPage + 1)" class="page-link page-link-btn">Next</a>
+            </li>
+            <!-- <li *ngIf="pager.currentPage<pager.totalPages" class="page-item">
+                <a (click)="setPage(pager.totalPages)" class="page-link page-link-btn">Last</a>
+              </li> -->
+          </ul>
+        </div>
+        </ng-template>
+
+        <!-- spinner template -->
+        <ng-template #spinner >
+           <div class="row" id="spinner">
+            <app-spinner></app-spinner>
+           </div>
+        </ng-template>
+        <ng-container *ngIf="productsList.length!=0 then products; else spinner"></ng-container>
       </div>
     </div>
 
-  </div>
+</div>
 </div>

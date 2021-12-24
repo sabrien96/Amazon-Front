@@ -1,69 +1,82 @@
-
-<div class="container-fluid">
-  <div class="row">
+<header class="container-fluid">
+  <!-- for screen larger than 576px -->
+  <div class="large-container">
     <!-- Start logo section -->
-    <div class="col-sm-2">
-      <img  alt="logo" class="logo">
+    <div class="logo">
+      <img alt="logo" class="logo">
     </div>
+    <!-- <div class="sidenav">
+      <i class="fas fa-bars"></i>
+    </div> -->
     <!-- End logo section -->
     <!-- Start search section -->
-    <div class="col-sm-5">
-      <form action="" class="search-container row">
-        <input type="text" placeholder="search" class="search col-sm-10">
-        <button class="search col-sm-2"> <img
+    <div class="search row">
+      <form class="search-container col-sm-12">
+        <input type="text" placeholder="search_txt" class="col-sm-10">
+        <button class="search_btn col-sm-2"> <img
             src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png" alt="" /></button>
       </form>
     </div>
     <!-- End search section -->
     <!-- Start login section -->
-    <div class="col-sm-5 ">
-      <!-- login -->
-      <div class="row login-container">
-        <div class="logincart col-sm-6">
-          <div class="btn-group dropdown">
-            <button type="button" class="btn dv dropdown-toggle toogle" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <p>Hello, Sign in </p>
-              <b>Account & Lists</b>
-            </button>
-            <div class="dropdown-menu dropdown-content">
-              <div class="menu_btn_container">
-                <button>Sign In</button>
-                <p>New Customer? <a>Start here</a></p>
-                <hr>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-6">
-                      <b>Your Lists</b>
-                      <a href="">Create List</a>
-                    </div>
-                    <div class="col-6">
-                      <b>Your Account</b>
-                      <a href="">Your Account</a>
-                      <a href="">Your Orders</a>
-                      <a href="">Your Addresses</a>
-                      <a href="">Your Lists</a>
-                      <a href="">Your Recommendations</a>
-                      <a href="">Your Seller Account</a>
-                    </div>
+
+    <!-- login -->
+    <div class="login-container">
+      <div class="logincart">
+        <div class="btn-group dropdown">
+          <button type="button" class="btn dv dropdown-toggle toogle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <p>Hello, Sign in </p>
+            <b>Account & Lists</b>
+          </button>
+          <div class="dropdown-menu dropdown-content">
+            <div class="menu_btn_container">
+              <button>Sign In</button>
+              <p>New Customer? <a>Start here</a></p>
+              <hr>
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <b>Your Lists</b>
+                    <a href="">Create List</a>
+                  </div>
+                  <div class="col-6">
+                    <b>Your Account</b>
+                    <a href="">Your Account</a>
+                    <a href="">Your Orders</a>
+                    <a href="">Your Addresses</a>
+                    <a href="">Your Lists</a>
+                    <a href="">Your Recommendations</a>
+                    <a href="">Your Seller Account</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <b><a style="color: white;">Orders</a></b>
-        </div>
-        <!-- cart -->
-        <div class="cart col-sm-6">
-          <button class="cart-icon">
-            <div class="cart-count"><span>10</span></div>
-            <i class="fas fa-shopping-cart icon"></i>
-          </button>
         </div>
       </div>
-      <!-- End cart -->
-    </div>
-    <!-- End login section -->
-  </div>
 
-</div>
+    </div>
+
+    <div class="order">
+      <b style="color: white;">Orders</b>
+    </div>
+    <!-- cart -->
+    <div class="cart ">
+      <button class="cart-icon">
+        <div class="cart-count"><span>10</span></div>
+        <i class="fas fa-shopping-cart  icon"></i>
+      </button>
+    </div>
+
+  </div>
+  <!-- for screen 576px
+   <div class="small-container">
+     <nav>
+       <ul>
+         <li><i class="fas fa-bars"></i></li>
+
+       </ul>
+     </nav>
+   </div> -->
+</header>

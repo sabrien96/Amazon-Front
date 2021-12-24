@@ -4,6 +4,7 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { SidnavComponent } from './sidnav/sidnav.component';
 
 
 
@@ -12,6 +13,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     MainHeaderComponent,
     NavbarComponent,
     HeaderComponent,
+    SidnavComponent,
   ],
   imports: [
     CommonModule,

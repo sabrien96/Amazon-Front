@@ -2,18 +2,86 @@
   height: fit-content;
 }
 
-.row2{
-  height: auto;
+ul {
+  list-style-type: none;
+  a {
+    text-decoration: chocolate;
+  }
 }
-.col-sm-2,
-.col-sm-10 {
-  border: 0.08rem solid gray;
+.row2 {
+  border-top: 0.08rem solid gray;
+  min-height: 15rem;
 }
 
-label{
-  font-size: 0.8rem;
-  font-weight:2rem;
+.col-sm-3 {
+  border-right: 1px solid gray;
+  .category, .price,.discount,.average{
+    margin-top: 15px;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+
+    h6{
+      font-size: 0.9rem;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+        background-color: transparent;
+        font-size: 0.8rem;
+    }
+    a:hover{
+      cursor: pointer;
+      color: chocolate;
+      text-decoration: chocolate;
+    }
+  }
+  i{
+    color: chocolate;
+  }
+  .average{
+    .rate{
+      display: flex;
+      flex-flow: row;
+    }
+  }
 }
-.card-title{
+.col-sm-9 {
+  .row {
+    min-height: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+}
+#spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
  
 }
+label {
+  font-size: 0.8rem;
+  font-weight: 2rem;
+}
+
+
+.pagination{
+  margin: 15px 0px 15px 0px;
+}
+.page-link {
+  color: chocolate;
+}
+ .page-link-btn {
+  color: white;
+  background-color: chocolate;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  border-color: rgb(204, 132, 81);
+  background-color:rgb(204, 132, 81) ;
+}
+

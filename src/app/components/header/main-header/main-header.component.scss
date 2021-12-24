@@ -1,31 +1,53 @@
-.container-fluid
-{
+// @media only screen and (min-width: 576px) {
+//   .logo,
+//   .order {
+//     display: none;
+//   }
+// }
+@media only screen and (max-width: 576px) {
+  .logo,
+  .order {
+    display: none;
+  }
+}
+.container-fluid {
   background-color: rgb(14, 15, 19);
+  .large-container {
+    display: flex;
+    flex-flow: row nowrap;
+    color: white;
+  }
+  // justify-content:flex-start;
+  div {
+    flex-grow: 1;
+  }
+  .search {
+    flex-grow: 2;
+  }
 }
-input[type=text]{
+input[type="text"] {
   padding: 6px;
-  margin-top:13px ;
+  margin-top: 10px;
   font-size: 17px;
-  border:none;
+  border: none;
   outline: none;
-
 }
-.search-container button{
+.search-container button {
   float: right;
   padding: 6px 10px;
-  margin-top:13px ;
+  margin-top: 10px;
   font-size: 17px;
-  border:none;
+  border: none;
   background-color: chocolate;
   font-size: 17px;
   outline: none;
   cursor: pointer;
 }
 
-.login-container{
-    .col{
-      display:flex;
-      justify-content: center;
+.login-container {
+  .col {
+    display: flex;
+    justify-content: center;
   }
 }
 .loginCart {
@@ -39,17 +61,17 @@ input[type=text]{
   .btn {
     width: auto !important;
 
-    p,b{
+    p,
+    b {
       color: white;
       font-size: 0.7rem;
     }
   }
-
 }
 .dropdown-menu {
   text-align: start !important ;
   // display: block;
-  top: 20px;
+  top: 45px;
   left: -25px;
   min-width: 25rem;
   .menu_btn_container {
@@ -64,45 +86,48 @@ input[type=text]{
       color: #fff;
       margin-bottom: 4px;
     }
-   p,a{
-     font-size: 0.7rem;
-   }
-   a{
-    cursor: pointer;
+    p,
+    a {
+      font-size: 0.7rem;
+    }
+    a {
+      cursor: pointer;
+    }
 
-  }
-   .col-6{
-     display: flex;
-     flex-flow: column;
-     justify-content: flex-start;
-     a{
-       color: gray;
-     }
-     a:hover{
-       color: chocolate;
-     }
-   }
+    .col-6 {
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+      a {
+        color: gray;
+      }
+    }
+    a:hover,
+    .col-6 a:hover {
+      color: chocolate;
+    }
   }
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.cart{
+.cart {
   display: flex;
   justify-content: flex-start;
   text-align: center;
-  .cart-icon{
+  .cart-icon {
     background-color: transparent;
-    border:none !important;
+    border: none !important;
     margin-top: -20;
-    .cart-count{
+    .cart-count {
       max-height: 20px;
-      span{
+      span {
         color: chocolate;
       }
     }
-    i{
+    i {
       color: white;
       font-size: large;
     }
@@ -114,4 +139,3 @@ input[type=text]{
   font-weight: 700;
   top: 0;
 }
-
