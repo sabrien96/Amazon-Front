@@ -1,3 +1,4 @@
+import { RatingComponent } from './shared/components/rating/rating.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +16,8 @@ import { CarouselComponent } from './shared/components/carousel/carousel.compone
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { PaginationControlsPipe } from './shared/pipes/pagination-controls.pipe';
 import { ProductCardComponent } from './shared/components/product-card/product-card.component'
+import { ProductCardDesignComponent } from './shared/components/product-card-design/product-card-design.component';
+import { PopularComponent } from './components/home/popular/popular.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,9 @@ import { ProductCardComponent } from './shared/components/product-card/product-c
     SpinnerComponent,
     PaginationControlsPipe,
     ProductCardComponent,
+    ProductCardDesignComponent,
+    PopularComponent,
+    RatingComponent
 
   ],
   imports: [

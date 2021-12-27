@@ -1,16 +1,18 @@
 // import { map } from 'ngrx/operators';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 // import * as _ from 'underscore';
 @Injectable({
   providedIn: 'root'
 })
 export class PaginationService {
+   endpoint = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
   getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
     // calculate total pages
     let totalPages = Math.ceil(totalItems / pageSize);
-
     let startPage: number, endPage: number;
     if (totalPages <= 5) {
         startPage = 1;
@@ -52,5 +54,9 @@ export class PaginationService {
 }
 range(start:number,end:number){
   return (new Array(end-start+1).fill(undefined).map((_,i)=>i+start));
+}
+
+getAllPosts(params:any): Observable<any> {
+  return this.http.get(this.endpoint, { params });
 }
 }

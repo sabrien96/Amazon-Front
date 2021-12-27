@@ -22,24 +22,28 @@ export class HomeComponent implements OnInit {
   originalProductsFilter: IProduct[] = [];
   allCategories: any;
   checkboxForm: FormGroup;
-  pager: any = {};
-  pagedItems:IProduct[]=[];
+  // POSTS:IProduct[]=[];
+  page = 1;
+  count = 0;
+  tableSize = 20;
+  tableSizes = [3, 6, 9, 12];
 
   constructor(
     private productServe: ProductsService,
     private filterServe: FilterService,
     private fb: FormBuilder,
-    private paginationServ:PaginationService
   ) {
     this.checkboxForm = this.fb.group({
       checkbox: '',
       myChoices: new FormArray([]),
     });
+
   }
   ngOnInit(): void {
     this.getAllCategory();
     this.getAllProducts();
-    this.setPage(1);
+    this.fetchProduct();
+
   }
   //get all categories
   getAllCategory() {
@@ -57,74 +61,82 @@ export class HomeComponent implements OnInit {
   }
   //filter based on checkbox option
   onCheckChange(event: any) {
-    const formArray: FormArray = this.checkboxForm.get(
-      'myChoices'
-    ) as FormArray;
+    const formArray: FormArray = this.checkboxForm.get('myChoices') as FormArray;
     /* Selected */
     if (event.target.checked) {
       // Add a new control in the arrayForm
       formArray.push(new FormControl(event.target.value));
     } else {
-    /* unselected */
+      /* unselected */
       // find the unselected element
       let i: number = 0;
-
       formArray.controls.forEach((ctrl) => {
-        if (ctrl.value == event.target.value) {
+        if (ctrl.value === event.target.value) {
           // Remove the unselected element from the arrayForm
-          formArray.removeAt(i);
+          formArray.removeAt(i++);
           return;
         }
-
-        i++;
+        // i++;
       });
     }
     if (formArray.value.length != 0) {
       this.productsList = [];
       formArray.value.map((item: string) => {
         console.log('item:', item);
-        let name = this.filterProductsByCategory(item);
-        // this.router.navigate([`/${cateName}/${filterCategory[0]['cateid']}`]);
-        this.filterServe.getProductByCategory(name).subscribe((data) => {
-          console.log('new data: ', data);
-          data.map((item) => {
-            this.productsList.push(item);
+        let checkName = this.checkCategoryFounded(item);
+        if (checkName !== 'not found') {
+          this.filterServe.getProductByCategory(checkName).subscribe((data) => {
+            console.log('new data: ', data);
+            data.map((item) => {
+              this.productsList.push(item);
+              // this.setPage(1);
+            });
           });
-        });
+        }
       });
-    } else {
+    }
+    else {
       this.productsList = this.originalProductsFilter;
+      // this.setPage(1);
       // this.productSize=this.productsList.length;
-
     }
   }
 
   // filter by category name
-  filterProductsByCategory(search: string) {
+  checkCategoryFounded(search: string) {
     let cateName;
     let filterCategory = this.allCategories.filter((item: any) => {
-      return item.name
-        .toString()
-        .toLowerCase()
-        .match(search.toString().toLowerCase());
+      return item.name.toString().toLowerCase().match(search.toString().toLowerCase());
     });
     if (filterCategory[0] != null) {
       cateName = filterCategory[0]['name'].toLowerCase();
       console.log(' original name ' + filterCategory[0]['name']);
       console.log(' new cateName ' + cateName);
+      return cateName;
     }
-    return cateName;
+    else {
+      console.log('Category name not found');
+      return 'not found';
+    }
   }
 
-  setPage(page:number) {
-    // get pager object from service
-    // this.pager = this.paginationServ.getPager(this.productsList?.length, page,9);
-    this.pager = this.paginationServ.getPager(this.productsList?.length, page,9);
-    // get current page of items
-    console.log("page: ",this.pager);
-    this.pagedItems = this.productsList?.slice(
-      this.pager.startIndex,
-      this.pager.endIndex + 1
-    );
+  fetchProduct(): void {
+    this.filterServe.getAllProducts().subscribe(
+      response => {
+        this.productsList = response;
+        // console.log(response);
+      });
   }
+
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.fetchProduct();
+  }
+
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.fetchProduct();
+  }
+
 }

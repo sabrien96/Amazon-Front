@@ -9,12 +9,14 @@ ul {
   }
 }
 .row2 {
-  border-top: 0.08rem solid gray;
+  // border-top: 0.08rem solid gray;
+  border-top: 1px solid rgb(211, 207, 207);
   min-height: 15rem;
+  
 }
 
 .col-sm-3 {
-  border-right: 1px solid gray;
+  border-top: 1px solid rgb(211, 207, 207);
   .category, .price,.discount,.average{
     margin-top: 15px;
   }
@@ -54,12 +56,13 @@ ul {
     display: flex;
     justify-content: center;
   }
+ 
 }
 #spinner{
   display: flex;
   justify-content: center;
   align-items: center;
- 
+
 }
 label {
   font-size: 0.8rem;
@@ -67,21 +70,20 @@ label {
 }
 
 
-.pagination{
-  margin: 15px 0px 15px 0px;
-}
-.page-link {
-  color: chocolate;
-}
- .page-link-btn {
-  color: white;
-  background-color: chocolate;
-}
+// .ngx-pagination .current {
+//   padding: 0.1875rem 0.625rem;
+//   color: #fefefe;
+//   cursor: default;
+//   background: chocolate;
+// }
 
-.page-item.active .page-link {
-  z-index: 3;
-  color: #fff;
-  border-color: rgb(204, 132, 81);
-  background-color:rgb(204, 132, 81) ;
+.rating-container{
+  border-top: 1px solid rgb(211, 207, 207);
+  margin: 80px -5px 50px -5px ;
+  padding: 15px;
+  h3{
+    margin: 10px;
+  }
+  
 }
 
