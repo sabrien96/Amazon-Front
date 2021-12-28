@@ -20,34 +20,33 @@
               {{cate.name}}
             </label>
           </div>
-          {{checkboxForm.value|json}}
         </form>
       </div>
 
       <!-- filter by price -->
       <div class="price">
         <h6>Price</h6>
-        <a>Under EGP400</a>
-        <a>EGP400 to EGP800</a>
-        <a>EGP800 to EGP1,200</a>
-        <a>EGP1,200 to EGP1,600</a>
-        <a>EGP1,600 & above</a>
-      </div>
+        <a (click)="filterPrice(1,400,$event)">Under EGP400</a>
+       <a (click)="filterPrice(400,800,$event)">EGP400 to EGP800</a>
+        <a (click)="filterPrice(800,1200,$event)">EGP800 to EGP1,200</a>
+        <a (click)="filterPrice(1200,1600,$event)">EGP1,200 to EGP1,600</a>
+        <a (click)="filterPrice(1600,1000000,$event)">EGP1,600 & above</a>
+      </div> 
       <!-- filter by discount -->
       <div class="discount">
         <h6>Discount</h6>
-        <a>10% off or more</a>
-        <a>20% off or more</a>
-        <a>30% off or more</a>
-        <a>50% off or more</a>
+        <a (click)="filterDiscount(10)">10% off or more</a>
+        <a (click)="filterDiscount(20)">20% off or more</a>
+        <a (click)="filterDiscount(30)">30% off or more</a>
+        <a (click)="filterDiscount(50)">50% off or more</a>
       </div>
       <!-- filter by average -->
       <div class="average">
         <h6>Average customer review</h6>
-        <div class="rate"> <app-rating  [value]="4" [color]="'chocolate'"></app-rating><a>& up</a></div>
-        <div class="rate"> <app-rating  [value]="3" [color]="'chocolate'"></app-rating><a>& up</a></div>
-        <div class="rate"> <app-rating  [value]="2" [color]="'chocolate'"></app-rating><a>& up</a></div>
-        <div class="rate"> <app-rating  [value]="1" [color]="'chocolate'"></app-rating><a>& up</a></div>
+        <div class="rate"> <app-rating  [value]="4" [color]="'chocolate'"></app-rating><a (click)="filterRating(4)">& up</a></div>
+        <div class="rate"> <app-rating  [value]="3" [color]="'chocolate'"></app-rating><a (click)="filterRating(3)">& up</a></div>
+        <div class="rate"> <app-rating  [value]="2" [color]="'chocolate'"></app-rating><a (click)="filterRating(2)">& up</a></div>
+        <div class="rate"> <app-rating  [value]="1" [color]="'chocolate'"></app-rating><a (click)="filterRating(1)">& up</a></div>
         
 
       </div>
@@ -59,12 +58,13 @@
         <!-- product template -->
         <ng-template #products>
           <div class="row">
-            <div class="col-sm-6 col-md-4 item-container" *ngFor="let item of productsList | paginate : {
+            <div class="col-sm-6 col-md-4 item-container" *ngFor="let item of productsList|paginate : {
             itemsPerPage: tableSize,
             currentPage: page,
             totalItems: count
           };
            let i = index">
+           <!-- <p>{{productsList|filter:'fashion':'category'}}</p> -->
               <app-product-card [product]="item"></app-product-card>
             </div>
           </div>

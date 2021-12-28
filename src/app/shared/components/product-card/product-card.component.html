@@ -25,6 +25,8 @@
       </a>
     </div>
     <b class="card-title">{{product.name|slice:0:50}}</b>
-    <p class="card-text text-muted">{{product.price}}</p>
+    <p class="card-text text-muted">EGY {{product.price}}</p>
+    <app-rating [value]="product.rating" [color]="'chocolate'"></app-rating>
+    <p class="card-text text-success">{{product.discount|percent}}</p>
   </div>
 </div>

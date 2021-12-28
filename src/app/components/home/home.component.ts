@@ -3,7 +3,7 @@ import { FilterService } from './../../shared/services/filter.service';
 import { Observable, Subscription } from 'rxjs';
 import { IProduct } from './../../shared/interfaces/product';
 import { ProductsService } from './../../shared/services/products.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import {
   Form,
   FormArray,
@@ -18,6 +18,7 @@ import {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  
   productsList: IProduct[] = [];
   originalProductsFilter: IProduct[] = [];
   allCategories: any;
@@ -54,9 +55,11 @@ export class HomeComponent implements OnInit {
   //get all products
   getAllProducts() {
     this.productServe.getAllProducts().subscribe((data) => {
-      this.productsList = data;
-      this.originalProductsFilter = [...this.productsList];
+      this.originalProductsFilter = data;
+      this.productsList = [...this.originalProductsFilter];
       // this.productSize=this.productsList.length
+      // console.log(this.productsList);
+      
     });
   }
   //filter based on checkbox option
@@ -119,11 +122,36 @@ export class HomeComponent implements OnInit {
       return 'not found';
     }
   }
-
+ 
+  // filter by price
+  filterPrice(priceLow:number,priceHigh:number ,event:any){
+    console.log('price click');  
+    this.productsList=this.originalProductsFilter.filter((product)=>{
+      return product.price>=priceLow && product.price<priceHigh;
+    })
+  }
+ // filter by discount
+ filterDiscount(discount:number){
+  console.log('discount click');  
+  this.productsList=this.originalProductsFilter.filter((product)=>{
+    return product.discount>=discount;
+  })
+}
+ // filter by rating
+ filterRating(rating:number){
+  console.log('rating click');  
+  this.productsList=this.originalProductsFilter.filter((product)=>{
+    if(product.rating===rating)
+    {
+      console.log(product.rating);
+    }
+    return product.rating===rating;
+  })
+}
   fetchProduct(): void {
     this.filterServe.getAllProducts().subscribe(
       response => {
-        this.productsList = response;
+        this.originalProductsFilter = response;
         // console.log(response);
       });
   }

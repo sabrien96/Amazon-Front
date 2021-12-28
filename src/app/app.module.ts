@@ -14,7 +14,7 @@ import {HeaderModule} from './components/header/header.module';
 import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
-import { PaginationControlsPipe } from './shared/pipes/pagination-controls.pipe';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 import { ProductCardComponent } from './shared/components/product-card/product-card.component'
 import { ProductCardDesignComponent } from './shared/components/product-card-design/product-card-design.component';
 import { PopularComponent } from './components/home/popular/popular.component';
@@ -25,7 +25,7 @@ import { PopularComponent } from './components/home/popular/popular.component';
     HomeComponent,
     CarouselComponent,
     SpinnerComponent,
-    PaginationControlsPipe,
+    FilterPipe,
     ProductCardComponent,
     ProductCardDesignComponent,
     PopularComponent,
