@@ -1,4 +1,5 @@
 <div class="row">
+ <ng-template #popularContainer>
   <div id="demo" class="carousel slide col-sm-12" data-ride="carousel">
 
     <!-- Indicators -->
@@ -42,4 +43,13 @@
       <span class="carousel-control-next-icon"></span>
     </a>
   </div>
+ </ng-template>
+ <ng-template #spinner>
+  <div class="container d-flex justify-content-center align-items-center">
+    <app-spinner></app-spinner>
+  </div>
+ </ng-template>
+ 
+ <ng-container *ngIf="loading then popularContainer;else spinner"></ng-container>
+ 
 </div>

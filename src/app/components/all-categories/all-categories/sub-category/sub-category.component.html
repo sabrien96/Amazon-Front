@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm col-lg" *ngFor="let subItem of allSubCateList">
+    <div class="card  shadow-lg mx-auto " >
+      <!-- <app-show-all-sub [subItem]='subItem.name'></app-show-all-sub> -->
+      <div class="card-body">
+        <h5 class="card-title" >{{subItem.name}} </h5>
+        <img class="card-img-top w-100" src="../../../../../assets/icons/logo_black.jpg" alt="Card image cap">
+        <a class="card-link text-info" [routerLink]="['products','sabrien']" routerLinkActive="router-link-active" >see more </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

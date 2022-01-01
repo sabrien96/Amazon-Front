@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularComponent implements OnInit {
   higherRatedList: IProduct[] = [];
+  loading:boolean=false;
   constructor(private filterServ: FilterService) {
 
     
@@ -17,10 +18,9 @@ export class PopularComponent implements OnInit {
   ngOnInit(): void {
     this.filterServ.getAllProducts().subscribe((data)=>{
       this.higherRatedList= data.filter((item)=>{
-        // console.log(item.image);
-        
-        return item.rating>=4.5
+        return item.rating>=4.5;
       });
+      this.loading=true;
     });
 
   }

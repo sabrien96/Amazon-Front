@@ -3,8 +3,8 @@
    color:white;
 }
 .firstRow{
-  background-color: rgb(56, 56, 71);
-  display: flex;
+  background-color: #37475A;
+    display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -13,13 +13,16 @@
   }
 }
 .secondRow{
-  background-color: rgb(22, 35, 53);
+  background-color: #232F3E;
     padding:20px 0px 50px 0px;
 
     .columns{
         display: flex;
         flex-flow: column;
 
+   }
+   a:hover{
+     text-decoration: underline;
    }
 }
 a{
@@ -29,7 +32,7 @@ a{
 }
 .thirdRow
 {
-  background-color: rgb(22, 35, 53);
+  background-color: #232F3E;
   padding:20px 0px 20px 0px;
   margin-top: 1px;
   .col-sm-12{

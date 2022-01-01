@@ -9,11 +9,12 @@ import { FilterService } from './shared/services/filter.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  
   title = 'Amazon';
   allcategory: any;
   currentLang: any;
   obj: { en: string, ar: string } = { en: 'english', ar: 'عربي' };
- 
+
   constructor(
     public translate: TranslateService, private filterServe:FilterService) {
     this.currentLang = localStorage.getItem('currentLang') || 'en'

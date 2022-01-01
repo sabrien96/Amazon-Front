@@ -1,32 +1,18 @@
-<!-- <div class="card" >
-  <img class="card-img-top w-100  "  src="../../../../assets/icons/logo_black.jpg" alt="Vans">
+
+<div class="card bg-light shadow-sm">
+  <img class="card-img-top w-100" [src]="product.image[0]" alt="Card image cap">
   <div class="card-img-overlay d-flex justify-content-end">
     <a href="#" class="card-link text-danger like">
       <i class="fas fa-heart"></i>
     </a>
   </div>
   <div class="card-body">
-    <h4 class="card-title">{{product.name}}</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Price: {{product.price}}</h6>
-    <p class="card-text"> </p>
-    <div class="buy d-flex justify-content-between align-items-center">
-      <div class="price text-success">
-      </div>
-    </div>
+    <div class="">
+      <h6 class="card-title">{{product.name|slice:0:50}}</h6>
+      <span   class="price-was price dis">EGY {{product.price - (product.price * product.discount/100)}}</span>
+      <h4 class="card-text">EGY {{product.price}}</h4>
+      <app-rating [value]="product.rating" [color]="'chocolate'"></app-rating>
+      <p class="card-text text-success">{{product.discount|percent}}</p>
   </div>
-</div> -->
-
-<div class="card mb-2">
-  <div class="card-body">
-    <img class="card-img-top w-100" [src]="product.image[0]" alt="Card image cap">
-    <div class="card-img-overlay d-flex justify-content-end">
-      <a href="#" class="card-link text-danger like">
-        <i class="fas fa-heart"></i>
-      </a>
-    </div>
-    <b class="card-title">{{product.name|slice:0:50}}</b>
-    <p class="card-text text-muted">EGY {{product.price}}</p>
-    <app-rating [value]="product.rating" [color]="'chocolate'"></app-rating>
-    <p class="card-text text-success">{{product.discount|percent}}</p>
   </div>
 </div>

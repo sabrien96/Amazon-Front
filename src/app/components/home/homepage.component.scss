@@ -12,12 +12,12 @@ ul {
   // border-top: 0.08rem solid gray;
   border-top: 1px solid rgb(211, 207, 207);
   min-height: 15rem;
-  
+
 }
 
 .col-sm-3 {
   border-top: 1px solid rgb(211, 207, 207);
-  .category, .price,.discount,.average{
+  .category, .price,.discount,.average ,.all{
     margin-top: 15px;
   }
   div{
@@ -56,13 +56,14 @@ ul {
     display: flex;
     justify-content: center;
   }
- 
-}
-#spinner{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .container-fluid{
+    height: 100%;
+  }
 
+}
+.spinner{
+  height: 100%;
+  width: 100%;
 }
 label {
   font-size: 0.8rem;
@@ -84,6 +85,15 @@ label {
   h3{
     margin: 10px;
   }
-  
+
 }
+
+.pagination
+{
+  position: absolute;
+}
+
+
+
+
 

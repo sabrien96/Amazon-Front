@@ -2,34 +2,40 @@ import { RatingComponent } from './shared/components/rating/rating.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {HeaderModule} from './components/header/header.module';
-import { HomeComponent } from './components/home/home.component';
+import { HeaderModule } from './components/header/header.module';
+import { HomePageComponent } from './components/home/homepage.component';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { ProductCardComponent } from './shared/components/product-card/product-card.component'
 import { ProductCardDesignComponent } from './shared/components/product-card-design/product-card-design.component';
 import { PopularComponent } from './components/home/popular/popular.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { AllCategoriesModule } from './components/all-categories/all-categories.module';
+import { SwipperDirective } from './shared/directives/swipper.directive';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HomeComponent,
+    HomePageComponent,
     CarouselComponent,
     SpinnerComponent,
     FilterPipe,
     ProductCardComponent,
     ProductCardDesignComponent,
     PopularComponent,
-    RatingComponent
+    RatingComponent,
+    NotFoundComponent,
+    SwipperDirective
 
   ],
   imports: [
@@ -37,7 +43,8 @@ import { PopularComponent } from './components/home/popular/popular.component';
     AppRoutingModule,
     HttpClientModule,
     HeaderModule,
-   ReactiveFormsModule,
+    AllCategoriesModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -46,7 +53,8 @@ import { PopularComponent } from './components/home/popular/popular.component';
         deps: [HttpClient]
       }
     }),
-    NgxPaginationModule
+    NgxPaginationModule,
+
 
   ],
   providers: [],

@@ -1,0 +1,16 @@
+.card{
+  background-color:transparent;
+  border: none;
+  transition: transform 3s,box-shadow;
+}
+.card:hover{
+  transform: scale(1.1,1.1);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: chocolate;
+  color: #fefefe;
+  cursor: default;
+}

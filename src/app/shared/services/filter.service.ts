@@ -73,15 +73,8 @@ export class FilterService {
       catchError(err => { return throwError(err.message); })
     )
   }
-  // filterbyByRate(list:IProduct[]) {
-  //   console.log(list.length); 
-  //  list =list.filter((item)=>{
-  //    return item.rating>=4;
-  //   });
-  //   console.log(list); 
-  //   return list;
-  // }
- 
- 
-  
+
+
+
+
 }
