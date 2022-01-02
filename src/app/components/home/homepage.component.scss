@@ -92,7 +92,21 @@ label {
 {
   position: absolute;
 }
+// ::ng-deep .ngx-pagination > ul > li:not(.active) > a {
+//   background-color: chocolate !important;
+//   border-color: chocolate !important;
+// }
 
+// ::ng-deep ul > li.disabled > span {
+//   background-color: brown !important;
+//   border-color: black !important;
+// }
+
+// ::ng-deep .ngx-pagination > ul > li.active > a {
+//   background-color:chocolate !important;
+//   border-color: chocolate !important;
+
+// }
 
 
 

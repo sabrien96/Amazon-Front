@@ -1,22 +1,22 @@
-import { IProduct } from './../../../../shared/interfaces/product';
-import { FilterService } from './../../../../shared/services/filter.service';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { createElementCssSelector } from '@angular/compiler';
+import { Router } from '@angular/router';
+import { FilterService } from '../../../shared/services/filter.service';
 
 @Component({
   selector: 'app-sub-category',
   templateUrl: './sub-category.component.html',
   styleUrls: ['./sub-category.component.scss']
 })
-export class SubCategoryComponent implements OnInit, OnChanges {
+export class SubCategoryComponent implements OnInit {
+
   @Input() cateId: any;
   allSubCateList: any[]=[
     {name:'sub1'},
     {name:'sub2'},
     {name:'sub3'},
-    
+
   ];
-  constructor(private filterServe: FilterService) {
+  constructor(private filterServe: FilterService,private router:Router) {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -35,5 +35,8 @@ export class SubCategoryComponent implements OnInit, OnChanges {
     });
   }
 
-  
+  navigate(params:string){
+    this.router.navigate(['products',{subName:params}])
+  }
+
 }

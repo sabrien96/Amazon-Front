@@ -18,9 +18,9 @@ import { ProductCardComponent } from './shared/components/product-card/product-c
 import { ProductCardDesignComponent } from './shared/components/product-card-design/product-card-design.component';
 import { PopularComponent } from './components/home/popular/popular.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { AllCategoriesModule } from './components/all-categories/all-categories.module';
 import { SwipperDirective } from './shared/directives/swipper.directive';
-
+import { AllCategoriesComponent } from './components/all-categories/all-categories.component';
+import { SubCategoryComponent } from './components/all-categories/sub-category/sub-category.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,9 @@ import { SwipperDirective } from './shared/directives/swipper.directive';
     PopularComponent,
     RatingComponent,
     NotFoundComponent,
-    SwipperDirective
+    SwipperDirective,
+    AllCategoriesComponent,
+    SubCategoryComponent,
 
   ],
   imports: [
@@ -43,7 +45,6 @@ import { SwipperDirective } from './shared/directives/swipper.directive';
     AppRoutingModule,
     HttpClientModule,
     HeaderModule,
-    AllCategoriesModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
