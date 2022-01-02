@@ -9,12 +9,12 @@ import { FilterService } from '../../shared/services/filter.service';
 export class AllCategoriesComponent implements OnInit {
 allCateList:any[]=[{
    name:'category Name',
-   
+
  }];
   constructor(public filterServ:FilterService) {
     this.getAllCategories();
-    console.log(this.activate);
-    
+    // console.log(this.activate);
+
   }
 
   ngOnInit(): void {

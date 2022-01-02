@@ -10,13 +10,14 @@ import { FilterService } from '../../../shared/services/filter.service';
 export class SubCategoryComponent implements OnInit {
 
   @Input() cateId: any;
-  allSubCateList: any[]=[
-    {name:'sub1'},
-    {name:'sub2'},
-    {name:'sub3'},
+  allSubCateList: any[]=[];
+  //  = [
+  //   { name: 'sub1' },
+  //   { name: 'sub2' },
+  //   { name: 'sub3' },
 
-  ];
-  constructor(private filterServe: FilterService,private router:Router) {
+  // ];
+  constructor(private filterServe: FilterService, private router: Router) {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -27,16 +28,18 @@ export class SubCategoryComponent implements OnInit {
   }
 
   getAllSubCategories() {
-    this.filterServe.getAllSubcategoryByCateId(this.cateId).subscribe((response) => {
+    this.filterServe.getAllSubcategoryByCateId(this.cateId + 1).subscribe((response) => {
       this.allSubCateList = response;
-     // this.index=this.randomNumber(0,this.allSubCateList.length)
-     // console.log('response: ', response);
+      // this.index=this.randomNumber(0,this.allSubCateList.length)
+      // console.log('response: ', response);
 
     });
   }
 
-  navigate(params:string){
-    this.router.navigate(['products',{subName:params}])
+  navigate(params: string) {
+    console.log();
+
+    this.router.navigate(['products/:',{subName:params}])
   }
 
 }

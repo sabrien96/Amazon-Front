@@ -10,121 +10,122 @@ import { IProduct } from '../../../shared/interfaces/product';
 })
 export class ProductsComponent implements OnInit,OnChanges {
 subcategoryName:string;
-productsList:IProduct[]=[
-  {
-    name: 'name1',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-  {
-    name: 'name1',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-  {
-    name: 'name1',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-  {
-    name: 'name1',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-  {
-    name: 'name1',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-  {
-    name: 'name1',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-  {
-    name: 'name2',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-  {
-    name: 'name3',
-    image: ['image'],
-    brand: 'brand',
-    description: 'discription',
-    countInStock: 5,
-    price: 100,
-    category: 'cateogery',
-    subcategory: 'sab name',
-    overview: 'overview',
-    rating:4.4, //default = 0
-    numReviews: 5, //default = 0
-    discount: 100, //default = 0
-  },
-   
-];
+productsList:IProduct[]=[];
+// =[
+//   {
+//     name: 'name1',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+//   {
+//     name: 'name1',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+//   {
+//     name: 'name1',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+//   {
+//     name: 'name1',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+//   {
+//     name: 'name1',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+//   {
+//     name: 'name1',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+//   {
+//     name: 'name2',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+//   {
+//     name: 'name3',
+//     image: ['image'],
+//     brand: 'brand',
+//     description: 'discription',
+//     countInStock: 5,
+//     price: 100,
+//     category: 'cateogery',
+//     subcategory: 'sab name',
+//     overview: 'overview',
+//     rating:4.4, //default = 0
+//     numReviews: 5, //default = 0
+//     discount: 100, //default = 0
+//   },
+
+// ];
 page = 1;
   count = 0;
   tableSize = 20;
@@ -132,12 +133,13 @@ page = 1;
   constructor(private activatedRoute:ActivatedRoute ,private filterServe:FilterService) {
     this.subcategoryName=this.activatedRoute.snapshot.paramMap.get('subName')+'';
     console.log("params",this.activatedRoute.snapshot.paramMap.get('subName'));
-    this.fetchProduct();
-   }
-   
-   ngOnInit(): void {
   }
-  ngOnChanges(changes: SimpleChanges): void {
+
+   ngOnInit(): void {
+     this.fetchProduct();
+    }
+    ngOnChanges(changes: SimpleChanges): void {
+    this.fetchProduct();
 
   }
 
@@ -148,7 +150,7 @@ page = 1;
   // }
 
   fetchProduct(): void {
-    this.filterServe.getAllProducts().subscribe(
+    this.filterServe.getProductsBySubcategory(this.subcategoryName).subscribe(
       response => {
         this.productsList=response;
       });

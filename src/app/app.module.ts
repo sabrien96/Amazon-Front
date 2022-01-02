@@ -21,6 +21,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { SwipperDirective } from './shared/directives/swipper.directive';
 import { AllCategoriesComponent } from './components/all-categories/all-categories.component';
 import { SubCategoryComponent } from './components/all-categories/sub-category/sub-category.component';
+import { ProductsComponent } from './components/products/products/products.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SubCategoryComponent } from './components/all-categories/sub-category/s
     SwipperDirective,
     AllCategoriesComponent,
     SubCategoryComponent,
+    ProductsComponent
 
   ],
   imports: [
