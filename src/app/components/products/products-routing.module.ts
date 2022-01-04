@@ -4,10 +4,11 @@ import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {
-    // path: ':subName', component: ProductsComponent,
-    // children: [
-    //   // {path:':subName',component:ProductsComponent}
-    // ]
+    path: ':cateId', component: ProductsComponent,
+    children: [
+      // {path:'subcategory/:subName',component:SpecifiedProductsComponent},
+      // {path:':subName',redirectTo:'',pathMatch:'full'}
+    ]
   }
 ];
 

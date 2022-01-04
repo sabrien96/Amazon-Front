@@ -1,3 +1,4 @@
+import { ProductsModule } from './components/products/products.module';
 import { RatingComponent } from './shared/components/rating/rating.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -12,40 +13,32 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderModule } from './components/header/header.module';
 import { HomePageComponent } from './components/home/homepage.component';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
-import { SpinnerComponent } from './shared/components/spinner/spinner.component';
-import { FilterPipe } from './shared/pipes/filter.pipe';
-import { ProductCardComponent } from './shared/components/product-card/product-card.component'
-import { ProductCardDesignComponent } from './shared/components/product-card-design/product-card-design.component';
-import { PopularComponent } from './components/home/popular/popular.component';
-import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SwipperDirective } from './shared/directives/swipper.directive';
 import { AllCategoriesComponent } from './components/all-categories/all-categories.component';
 import { SubCategoryComponent } from './components/all-categories/sub-category/sub-category.component';
-import { ProductsComponent } from './components/products/products/products.component';
+// import { ProductsComponent } from './components/products/products/products.component';
+import { CoreModule } from './shared/modules/core/core.module';
+import { PopularComponent } from './components/home/popular/popular.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomePageComponent,
-    CarouselComponent,
-    SpinnerComponent,
-    FilterPipe,
-    ProductCardComponent,
-    ProductCardDesignComponent,
     PopularComponent,
-    RatingComponent,
-    NotFoundComponent,
+    CarouselComponent,
     SwipperDirective,
     AllCategoriesComponent,
     SubCategoryComponent,
-    ProductsComponent
+    // ProductsComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CoreModule,
+    ProductsModule,
     HeaderModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({

@@ -29,13 +29,11 @@
 
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav float-left">
+      <ul class="navbar-nav">
         <li class="nav-item" *ngFor="let category of categories">
           <a class="nav-link" (click)="navigate(category.router)"
             routerLinkActive="router-link-active">{{category.cateName}}</a>
         </li>
-      </ul>
-      <ul class="navbar-nav float-right">
         <li class="nav-item ">
           <a class="nav-link advs-text">{{'end of year sale'|uppercase}}</a>
           <!-- <p></p> -->

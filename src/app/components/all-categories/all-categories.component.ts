@@ -13,7 +13,6 @@ allCateList:any[]=[{
  }];
   constructor(public filterServ:FilterService) {
     this.getAllCategories();
-    // console.log(this.activate);
 
   }
 
@@ -24,7 +23,6 @@ allCateList:any[]=[{
   {
     this.filterServ.getAllCategory().subscribe((response)=>{
       this.allCateList=response;
-      console.log('allCate: ',response);
 
     });
   }

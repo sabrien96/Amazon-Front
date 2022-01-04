@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilterService } from '../../../shared/services/filter.service';
 
@@ -10,13 +10,7 @@ import { FilterService } from '../../../shared/services/filter.service';
 export class SubCategoryComponent implements OnInit {
 
   @Input() cateId: any;
-  allSubCateList: any[]=[];
-  //  = [
-  //   { name: 'sub1' },
-  //   { name: 'sub2' },
-  //   { name: 'sub3' },
-
-  // ];
+  allSubCateList: any[] = [];
   constructor(private filterServe: FilterService, private router: Router) {
 
   }
@@ -30,16 +24,12 @@ export class SubCategoryComponent implements OnInit {
   getAllSubCategories() {
     this.filterServe.getAllSubcategoryByCateId(this.cateId + 1).subscribe((response) => {
       this.allSubCateList = response;
-      // this.index=this.randomNumber(0,this.allSubCateList.length)
-      // console.log('response: ', response);
-
     });
   }
 
-  navigate(params: string) {
-    console.log();
-
-    this.router.navigate(['products/:',{subName:params}])
+  navigateToProducts(subName: string) {
+    this.router.navigate(['products',this.cateId]);
+    // this.router.navigate(['products',subName], { queryParams: { cateId: this.cateId, subName: subName } })
   }
 
 }
