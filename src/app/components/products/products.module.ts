@@ -8,10 +8,12 @@ import { ProductsRoutingModule } from './products-routing.module';
 // import { ProductsComponent } from './products/products.component';
 import { ProductsComponent } from './products/products.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     CommonModule,

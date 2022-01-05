@@ -8,60 +8,111 @@
   </div>
   <!-- products pagination & filteration -->
   <div class="row row2">
-    <div class="col-sm-12 col-md-3 side-filter">
+    <div class="col-sm-3 col-md-3 side-filter">
+      <nav class="navbar bg-light">
+        <ul class="navbar-nav main-nav">
+          <li class="nav-item all">
+              <h6><a (click)="getAllProducts()">All Deals </a></h6>
+          </li>
 
-      <!-- filter by category -->
-      <div class="category">
-        <h6>Categories</h6>
+          <!-- filter by category -->
+          <li class="nav-item">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <h6>Categories</h6>
+              </li>
+              <li class="nav-item">
+                <div class="category">
+                  <form [formGroup]="checkboxForm">
+                    <div class="form-check" *ngFor="let cate of allCategories">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" [value]="cate.name" formControlName="checkbox"
+                          (change)="onCheckChange($event)">
+                        {{cate.name}}
+                      </label>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- filter by category -->
+          <li class="nav-item">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <h6>Categories</h6>
+              </li>
+              <li class="nav-item">
+                <div class="category">
+                  <form [formGroup]="checkboxForm">
+                    <div class="form-check" *ngFor="let cate of allCategories">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" [value]="cate.name" formControlName="checkbox"
+                          (change)="onCheckChange($event)">
+                        {{cate.name}}
+                      </label>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- filter by price -->
+          <li class="nav-item">
+            <ul class="navbar-nav">
+              <li>
+                <h6>Price</h6>
+              </li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterPrice(1,400,$event)">Under EGP400</a> </li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterPrice(400,800,$event)">EGP400 to EGP800</a></li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterPrice(800,1200,$event)">EGP800 to EGP1,200</a>
+              </li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterPrice(1200,1600,$event)">EGP1,200 to EGP1,600</a>
+              </li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterPrice(1600,1000000,$event)">EGP1,600 & above</a>
+              </li>
+            </ul>
+          </li>
+          <!-- filter by discount -->
+          <li class="nav-item">
+            <ul class="navbar-nav">
+              <div class="discount">
+                <h6>Discount</h6>
+              </div>
+              <li class="nav-item"> <a class="nav-link" (click)="filterDiscount(10)">10% off or more</a></li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterDiscount(20)">20% off or more</a></li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterDiscount(30)">30% off or more</a></li>
+              <li class="nav-item"> <a class="nav-link" (click)="filterDiscount(50)">50% off or more</a></li>
 
-        <form [formGroup]="checkboxForm">
-          <div class="form-check" *ngFor="let cate of allCategories">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" [value]="cate.name" formControlName="checkbox"
-                (change)="onCheckChange($event)">
-              {{cate.name}}
-            </label>
-          </div>
-        </form>
-      </div>
-      <div class="all">
-        <h6><a (click)="getAllProducts()">All Deals </a></h6>
-      </div>
-      <!-- filter by price -->
-      <div class="price">
-        <h6>Price</h6>
-        <a (click)="filterPrice(1,400,$event)">Under EGP400</a>
-        <a (click)="filterPrice(400,800,$event)">EGP400 to EGP800</a>
-        <a (click)="filterPrice(800,1200,$event)">EGP800 to EGP1,200</a>
-        <a (click)="filterPrice(1200,1600,$event)">EGP1,200 to EGP1,600</a>
-        <a (click)="filterPrice(1600,1000000,$event)">EGP1,600 & above</a>
-      </div>
-      <!-- filter by discount -->
-      <div class="discount">
-        <h6>Discount</h6>
-        <a (click)="filterDiscount(10)">10% off or more</a>
-        <a (click)="filterDiscount(20)">20% off or more</a>
-        <a (click)="filterDiscount(30)">30% off or more</a>
-        <a (click)="filterDiscount(50)">50% off or more</a>
-      </div>
-      <!-- filter by average -->
-      <div class="average">
-        <h6>Average customer review</h6>
-        <div class="rate">
-          <app-rating [value]="4" [color]="'chocolate'"></app-rating><a (click)="filterRating(4)">& up</a>
-        </div>
-        <div class="rate">
-          <app-rating [value]="3" [color]="'chocolate'"></app-rating><a (click)="filterRating(3)">& up</a>
-        </div>
-        <div class="rate">
-          <app-rating [value]="2" [color]="'chocolate'"></app-rating><a (click)="filterRating(2)">& up</a>
-        </div>
-        <div class="rate">
-          <app-rating [value]="1" [color]="'chocolate'"></app-rating><a (click)="filterRating(1)">& up</a>
-        </div>
-
-
-      </div>
+            </ul>
+          </li>
+          <!-- filter by average -->
+          <li class="nav-item">
+             <ul class="navbar-nav average-nav">
+              <div class="average">
+                <h6>Average customer review</h6>
+              </div>
+              <li class="nav-item">
+                <app-rating [value]="4" [color]="'chocolate'"></app-rating>
+                <a class="nav-link" (click)="filterRating(4)">& up</a>
+              </li>
+              <li class="nav-item">
+                <app-rating [value]="3" [color]="'chocolate'"></app-rating>
+                <a class="nav-link" (click)="filterRating(3)">& up</a>
+              </li>
+              <li class="nav-item">
+                <app-rating [value]="2" [color]="'chocolate'"></app-rating>
+                <a class="nav-link" (click)="filterRating(2)">& up</a>
+              </li>
+              <li class="nav-item">
+                <app-rating [value]="1" [color]="'chocolate'"></app-rating>
+                <a class="nav-link" (click)="filterRating(1)">& up</a>
+              </li>
+              <li class="nav-item"></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
 
     </div>
     <!-- show products cards -->
@@ -92,9 +143,10 @@
 
         <!-- spinner template -->
         <ng-template #spinner>
-          <div class="row ">
-            <div class="container  d-flex justify-content-center align-items-center" id="spinner">
+          <div class="row mx-auto">
+            <div class="container d-flex justify-content-center align-items-center p-5">
               <app-spinner></app-spinner>
+
             </div>
           </div>
         </ng-template>

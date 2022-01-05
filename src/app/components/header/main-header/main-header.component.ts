@@ -107,10 +107,10 @@ export class MainHeaderComponent implements OnInit {
   navigateToForm(index: any) {
     switch (index) {
       case 1:
-        this.router.navigate(['/signUp']);
+        this.router.navigate(['/auth/signup']);
         break;
       case 2:
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth/login']);
         break;
     }
   }

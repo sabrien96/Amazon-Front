@@ -10,6 +10,7 @@ import { IProduct } from '../../../shared/interfaces/product';
 })
 export class ProductsComponent implements OnInit, OnChanges {
   loading: boolean = false;
+  loadingPage:boolean=false;
   categoryName: any='category name';
   cateId: any;
   subcategoryName: string='';
@@ -25,23 +26,23 @@ export class ProductsComponent implements OnInit, OnChanges {
     private router: Router,
     private filterServe: FilterService) {
     this.activatedRoute.paramMap.subscribe((params) => {
-      this.cateId = parseInt(params.get('cateId') + '');
+      this.cateId = parseInt(params.get('cateId') + '')+1;
       // this.subName = params.get('subName') + '';
-      
+      console.log("cateId: ",this.cateId);    
     });
   }
   
   ngOnInit(): void {
     this.getCategoryName();
     this.getSubCategory();
-    this.fetchAllProduct();
+    // this.fetchAllProduct();
     
   }
   ngOnChanges(changes: SimpleChanges): void {
     // this.fetchAllProduct();
-    if (!this.categoryName && !this.subCategoryList) {
-      this.loading = true;
-    }
+    // if (!this.categoryName && !this.subCategoryList) {
+    //   this.loading = true;
+    // }
   }
 
 
@@ -49,22 +50,28 @@ export class ProductsComponent implements OnInit, OnChanges {
     this.filterServe.getAllSubcategoryByCateId(this.cateId).subscribe(
       response => {
         this.subCategoryList = response;
+        this.loadingPage=true;
       });
   }
   getCategoryName() {
     this.filterServe.getAllCategory().subscribe((response) => {
       this.categoryList = response;
+      console.log("cateList: ",this.categoryList);
+      
       this.categoryList = this.categoryList.filter((el: any) => {
         return el.cateId === this.cateId ? el.name : '';
       });
-      this.categoryName = this.categoryList[0].name;
+      this.categoryName = this.categoryList[0]?.name;
+      this.fetchAllProduct();
     });
 
 
   }
+  // get all products by category name
   fetchAllProduct(): void {
-    this.filterServe.getProductByCategory('fashion').subscribe((response) => {
+    this.filterServe.getProductByCategory(this.categoryName).subscribe((response) => {
       this.productsList = response;
+      console.log("productList: ",this.productsList);  
       this.originalList=[...this.productsList]
       this.loading = true;
     })

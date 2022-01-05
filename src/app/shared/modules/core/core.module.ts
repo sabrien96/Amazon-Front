@@ -6,6 +6,7 @@ import { ProductCardDesignComponent } from '../../components/product-card-design
 import { RatingComponent } from '../../components/rating/rating.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { FilterPipe } from '../../pipes/filter.pipe';
+// import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -20,7 +21,8 @@ import { FilterPipe } from '../../pipes/filter.pipe';
   ],
   imports: [
     CommonModule,
-    
+    // NgxPaginationModule
+
   ],
   exports: [
     SpinnerComponent,

@@ -4,6 +4,8 @@
 //     display: none;
 //   }
 // }
+$main-color:chocolate;
+$text-color:#fff;
 @media only screen and (max-width: 768px) {
   .left-container {
     padding-left: 5px;
@@ -23,12 +25,12 @@
     display: block;
     text-align: center;
     button {
-      background-color: chocolate;
+      background-color: $main-color;
       width: 50%;
       height: 45px;
       border: 1px;
       border-radius: 5px;
-      color: #fff;
+      color: $text-color;
       margin-bottom: 4px;
     }
     p,
@@ -49,11 +51,10 @@
     }
     a:hover,
     .col-6 a:hover {
-      color: chocolate;
+      color: $main-color;
     }
   }
 }
-
 // .dropdown:hover .dropdown-content {
 //   display: block;
 // }
@@ -86,24 +87,24 @@ input[type="text"] {
 }
 .menu-btn {
   background: rgb(110, 106, 106);
-  color: #fff;
+  color: $text-color;
   border-bottom-left-radius: 0.25rem;
   border-top-left-radius: 0.25rem;
 }
 .search-btn {
-  background: chocolate;
+  background: $main-color;
   color: #000;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 }
 
 .item {
-  color: #fff;
+  color: $text-color;
   text-decoration: none;
   cursor: pointer;
 }
 .item:hover {
-  color: chocolate;
+  color: $main-color;
 }
 .cart {
   display: flex;
@@ -115,11 +116,11 @@ input[type="text"] {
     .cart-count {
       max-height: 20px;
       span {
-        color: chocolate;
+        color: $main-color;
       }
     }
     i {
-      color: white;
+      color: $text-color;
       font-size: larger;
     }
   }
@@ -127,7 +128,7 @@ input[type="text"] {
 
 // .cart_label {
 //   font-size: 12px;
-//   color: white;
+//   color: $text-color;
 //   font-weight: 700;
 //   top: 0;
 // }

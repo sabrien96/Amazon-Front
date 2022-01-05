@@ -20,8 +20,8 @@ export class HomePageComponent implements OnInit {
 
   productsList: IProduct[] = [];
   originalProductsFilter: IProduct[] = [];
-  loading:boolean;
-  notFound:boolean=false;
+  loading: boolean;
+  notFound: boolean = false;
   allCategories: any;
   checkboxForm: FormGroup;
   // POSTS:IProduct[]=[];
@@ -38,7 +38,7 @@ export class HomePageComponent implements OnInit {
       checkbox: '',
       myChoices: new FormArray([]),
     });
-    this.loading=false;
+    this.loading = false;
 
   }
   ngOnInit(): void {
@@ -60,10 +60,7 @@ export class HomePageComponent implements OnInit {
     this.productServe.getAllProducts().subscribe((data) => {
       this.originalProductsFilter = data;
       this.productsList = [...this.originalProductsFilter];
-      this.loading=true;
-
-      // this.productSize=this.productsList.length
-      // console.log(this.productsList);
+      this.loading = true;
     });
   }
   //filter based on checkbox option
@@ -96,13 +93,13 @@ export class HomePageComponent implements OnInit {
             console.log('new data: ', data);
             data.map((item) => {
               this.productsList.push(item);
-              this.notFound=false;
+              this.notFound = false;
               // this.setPage(1);
             });
           });
         }
-        else{
-          this.notFound=true;
+        else {
+          this.notFound = true;
         }
       });
     }
@@ -132,30 +129,29 @@ export class HomePageComponent implements OnInit {
   }
 
   // filter by price
-  filterPrice(priceLow:number,priceHigh:number ,event:any){
+  filterPrice(priceLow: number, priceHigh: number, event: any) {
     console.log('price click');
-    this.productsList=this.originalProductsFilter.filter((product)=>{
-      return product.price>=priceLow && product.price<priceHigh;
+    this.productsList = this.originalProductsFilter.filter((product) => {
+      return product.price >= priceLow && product.price < priceHigh;
     })
   }
- // filter by discount
- filterDiscount(discount:number){
-  console.log('discount click');
-  this.productsList=this.originalProductsFilter.filter((product)=>{
-    return product.discount>=discount;
-  })
-}
- // filter by rating
- filterRating(rating:number){
-  console.log('rating click');
-  this.productsList=this.originalProductsFilter.filter((product)=>{
-    if(product.rating>=rating)
-    {
-      console.log(product.rating);
-    }
-    return product.rating>=rating;
-  })
-}
+  // filter by discount
+  filterDiscount(discount: number) {
+    console.log('discount click');
+    this.productsList = this.originalProductsFilter.filter((product) => {
+      return product.discount >= discount;
+    })
+  }
+  // filter by rating
+  filterRating(rating: number) {
+    console.log('rating click');
+    this.productsList = this.originalProductsFilter.filter((product) => {
+      if (product.rating >= rating) {
+        console.log(product.rating);
+      }
+      return product.rating >= rating;
+    })
+  }
   fetchProduct(): void {
     this.filterServe.getAllProducts().subscribe(
       response => {
