@@ -19,6 +19,7 @@ import { SubCategoryComponent } from './components/all-categories/sub-category/s
 // import { ProductsComponent } from './components/products/products/products.component';
 import { CoreModule } from './shared/modules/core/core.module';
 import { PopularComponent } from './components/home/popular/popular.component';
+import { SortPipe } from './shared/pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PopularComponent } from './components/home/popular/popular.component';
     SwipperDirective,
     AllCategoriesComponent,
     SubCategoryComponent,
+    SortPipe,
     // ProductsComponent
 
   ],

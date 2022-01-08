@@ -29,7 +29,8 @@ export class HomePageComponent implements OnInit {
   count = 0;
   tableSize = 20;
   tableSizes = [3, 6, 9, 12];
-
+  sortArr:string [] = ['price', 'discount', 'rating'];
+  sortFiled:string='';
   constructor(
     private productServe: ProductsService,
     private filterServe: FilterService,
@@ -170,5 +171,8 @@ export class HomePageComponent implements OnInit {
     this.page = 1;
     this.fetchProduct();
   }
-
+  sortBy(event: any) {
+    // console.log("sort event: ", event.target.value);
+    this.sortFiled=event.target.value;
+  }
 }

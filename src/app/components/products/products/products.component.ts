@@ -28,7 +28,7 @@ export class ProductsComponent implements OnInit, OnChanges {
     this.activatedRoute.paramMap.subscribe((params) => {
       this.cateId = parseInt(params.get('cateId') + '')+1;
       // this.subName = params.get('subName') + '';
-      console.log("cateId: ",this.cateId);    
+      // console.log("cateId: ",this.cateId);    
     });
   }
   
@@ -56,7 +56,7 @@ export class ProductsComponent implements OnInit, OnChanges {
   getCategoryName() {
     this.filterServe.getAllCategory().subscribe((response) => {
       this.categoryList = response;
-      console.log("cateList: ",this.categoryList);
+      // console.log("cateList: ",this.categoryList);
       
       this.categoryList = this.categoryList.filter((el: any) => {
         return el.cateId === this.cateId ? el.name : '';
@@ -70,8 +70,9 @@ export class ProductsComponent implements OnInit, OnChanges {
   // get all products by category name
   fetchAllProduct(): void {
     this.filterServe.getProductByCategory(this.categoryName).subscribe((response) => {
+      console.log(this.categoryName); 
       this.productsList = response;
-      console.log("productList: ",this.productsList);  
+      // console.log("productList: ",response);  
       this.originalList=[...this.productsList]
       this.loading = true;
     })
@@ -85,7 +86,7 @@ export class ProductsComponent implements OnInit, OnChanges {
     }
     else{
       this.originalList.filter((el: any) => {
-       console.log(`${el.subcategory} , ${name}--> ${el.subcategory === name}`);
+      //  console.log(`${el.subcategory} , ${name}--> ${el.subcategory === name}`);
         if(el.subcategory===name){
           this.productsList.push(el);
         }

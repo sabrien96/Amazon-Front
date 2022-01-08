@@ -9,8 +9,21 @@ import { FilterService } from './shared/services/filter.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  
+export class AppComponent implements OnInit {
+  arr = [
+    {
+      name: 'sabrien',
+      age: 30
+    },
+    {
+      name: 'Amr',
+      age: 15
+    },
+    {
+      name: 'Saher',
+      age: 25
+    }
+  ]
 
 
 
@@ -25,31 +38,31 @@ export class AppComponent implements OnInit{
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         console.log('this.router.url', this.router.url);
-        this.showHeader = ['/auth/login', '/auth/signup','/admin','/admin/products',
-      '/admin/users','/admin/dashboard'].includes(this.router.url);
+        this.showHeader = ['/auth/login', '/auth/signup', '/admin', '/admin/products',
+          '/admin/users', '/admin/dashboard'].includes(this.router.url);
       }
     });
   } // note you have to use Public because you are using it in html file too.
 
-//   onScroll(event: any) {
-//     this.isVisible = this.scrollTop < event.target.scrollTop;
-//   }
-//   constructor(
-//     public translate: TranslateService, private filterServe:FilterService) {
-//     this.currentLang = localStorage.getItem('currentLang') || 'en'
-//     this.translate.use(this.currentLang);
-//     this.translate.onLangChange.subscribe(()=>{
-//       // console.log(this.translate);
-//     })
+  //   onScroll(event: any) {
+  //     this.isVisible = this.scrollTop < event.target.scrollTop;
+  //   }
+  //   constructor(
+  //     public translate: TranslateService, private filterServe:FilterService) {
+  //     this.currentLang = localStorage.getItem('currentLang') || 'en'
+  //     this.translate.use(this.currentLang);
+  //     this.translate.onLangChange.subscribe(()=>{
+  //       // console.log(this.translate);
+  //     })
 
-//   }
-ngOnInit(): void {
+  //   }
+  ngOnInit(): void {
 
-}
-//   changeCurrentLang(lang: string) {
-//     this.translate.use(lang);
-//     localStorage.setItem('currentLang', lang);
-//   }
+  }
+  //   changeCurrentLang(lang: string) {
+  //     this.translate.use(lang);
+  //     localStorage.setItem('currentLang', lang);
+  //   }
 
 
 }
