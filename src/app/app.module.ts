@@ -16,11 +16,10 @@ import { CarouselComponent } from './shared/components/carousel/carousel.compone
 import { SwipperDirective } from './shared/directives/swipper.directive';
 import { AllCategoriesComponent } from './components/all-categories/all-categories.component';
 import { SubCategoryComponent } from './components/all-categories/sub-category/sub-category.component';
-// import { ProductsComponent } from './components/products/products/products.component';
 import { CoreModule } from './shared/modules/core/core.module';
 import { PopularComponent } from './components/home/popular/popular.component';
 import { SortPipe } from './shared/pipes/sort.pipe';
-
+import { SwipperComponent } from './shared/components/swipper/swipper.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +31,7 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     AllCategoriesComponent,
     SubCategoryComponent,
     SortPipe,
+    SwipperComponent,
     // ProductsComponent
 
   ],
@@ -52,6 +52,7 @@ import { SortPipe } from './shared/pipes/sort.pipe';
       }
     }),
     NgxPaginationModule,
+
 
 
   ],

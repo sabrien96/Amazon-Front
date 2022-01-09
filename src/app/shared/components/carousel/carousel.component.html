@@ -2,22 +2,22 @@
   <h2>Today's Deals</h2>
   <div class="carousel-inner ">
     <div class="carousel-item active">
-      <div class="category-container">
-        <div class="items-container" *ngFor="let item of allDeals">
-          <div>
+      <div class="category-container row">
+        <div class="items-container col-sm"  *ngFor="let item of allDeals">
+          <a [routerLink]="item.router">
             <img [src]="item.icon" alt="">
             <h6>{{item.label}}</h6>
-          </div>
+          </a>
         </div>
       </div>
     </div>
     <div class="carousel-item">
-      <div class="category-container">
-        <div class="items-container" *ngFor="let item of remainderDeals">
-         <div>
+      <div class="category-container row">
+        <div class="items-container col-sm" *ngFor="let item of remainderDeals">
+         <a [routerLink]="item.router">
           <img [src]="item.icon" alt="">
           <h6>{{item.label}}</h6>
-         </div>
+         </a>
         </div>
       </div>
     </div>
@@ -30,4 +30,4 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div> 
+</div>

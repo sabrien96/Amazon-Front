@@ -47,6 +47,13 @@ export class HomePageComponent implements OnInit {
     this.getAllProducts();
     this.fetchProduct();
 
+    $(document).ready(function () {
+
+        $('.custom-select').each(function(){
+          $(this).children().first().attr("disabled","disabled");
+        })
+      // document ready
+    });
   }
 
 

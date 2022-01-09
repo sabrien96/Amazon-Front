@@ -17,43 +17,45 @@ export class CarouselComponent implements OnInit {
       label: 'Computers & Accessories',
       // icon:'fas fa-laptop',
       icon: `${this.path}icons_laptops.png`,
-      router: '',
+      router: '/products/1',
     },
     {
       label: 'Beauty',
       icon: `${this.path}icons_beauty_perfumes.png`,
-      router: '',
+      router: '/products/5',
     },
     {
       label: 'Home',
       icon: `${this.path}icons_home.png`,
-      router: '',
+      router: '/products/6',
     },
     {
       label: 'Electronics',
       icon: `${this.path}icons_Electronics.png`,
-      router: '',
+      router: '/products/1',
     },
     {
       label: 'Health & Personal Care',
       icon: `${this.path}icons_HPC.png`,
-      router: '',
+      router: '/products/5',
     },
     {
       label: 'Mobiles Phones & Accessories',
       icon: `${this.path}icons_mobiles.png`,
-      router: '',
+      router: '/products/1',
     },
     {
       label: 'Grocery',
       icon: `${this.path}icons_supermarket.png`,
-      router: '',
+      router: '/products/2',
     },
     {
       label: 'Fashion',
       icon: `${this.path}icons_fashion.png`,
-      router: '',
+      router: '/products/3',
     },
+  ];
+  remainderDeals = [
     {
       label: 'Toys',
       icon: `${this.path}icons_toys.png`,
@@ -64,13 +66,11 @@ export class CarouselComponent implements OnInit {
       icon: `${this.path}icons_sports.png`,
       router: '',
     },
-  ];
-  remainderDeals = [
     {
       label: 'Kitchen & Dining',
       // icon:'fas fa-shopping-cart',
       icon: `${this.path}icons_kitchen_essentials.png`,
-      router: '',
+      router: '/products/6',
     },
     {
       label: 'Baby',
@@ -82,7 +82,7 @@ export class CarouselComponent implements OnInit {
       label: 'Home Improvement',
       // icon:'fas fa-shopping-cart',
       icon: `${this.path}icons_tools.png`,
-      router: '',
+      router: '/products/6',
     },
     {
       label: 'Books',
@@ -94,7 +94,7 @@ export class CarouselComponent implements OnInit {
       label: 'Furniture',
       // icon:'fas fa-shopping-cart',
       icon: `${this.path}icons_furniture.png`,
-      router: '',
+      router: '/products/6',
     },
     {
       label: 'Pets',
