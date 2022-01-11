@@ -1,12 +1,13 @@
-import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-product-card',
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+  selector: 'app-popular-card',
+  templateUrl: './popular-card.component.html',
+  styleUrls: ['./popular-card.component.scss']
 })
-export class ProductCardComponent implements OnInit {
+export class PopularCardComponent implements OnInit {
+
   @Input() product: any;
   constructor(private router: Router) { }
 
@@ -17,4 +18,6 @@ export class ProductCardComponent implements OnInit {
     console.log("card navigate successfully");
     this.router.navigate(['/products/product-details',id]);
   }
+
+
 }

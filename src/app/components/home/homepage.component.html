@@ -7,7 +7,7 @@
     </div>
   </div>
   <!-- products pagination & filteration -->
-  <div class="row row2">
+  <div class="row row2 border border-left-0 border-right-0 border-bottom-0">
     <div class="col-sm-3 col-md-3 side-filter">
       <nav class="navbar bg-light">
         <ul class="navbar-nav main-nav">
@@ -123,7 +123,7 @@
           <div class="col-sm-3 ">
             <div class="form-group ">
               <select class="custom-select" (change)="sortBy($event)">
-                <option selected value="" >
+                <option selected value="">
                   Sort By
                 </option>
                 <option *ngFor="let field of sortArr">
@@ -136,45 +136,46 @@
           </div>
         </div>
 
-      <ng-template #products>
+        <ng-template #products>
 
-        <div class="row pt-3">
-          <div class="col-sm-6 col-md-4 item-container mt-2" *ngFor="let item of productsList|sort:[sortFiled,'desc']|paginate : {
+          <div class="row pt-3">
+            <div class="col-sm-6 col-md-4 item-container mt-2" *ngFor="let item of productsList|sort:[sortFiled,'desc']|paginate : {
             itemsPerPage: tableSize,
             currentPage: page,
             totalItems: count
           };let i = index">
-            <app-product-card [product]="item"></app-product-card>
+              <app-popular-card [product]="item"></app-popular-card>
+            </div>
           </div>
-        </div>
 
-        <!-- pagination -->
-        <div class="row pagination">
-          <div class="mt-4 mx-auto">
-            <pagination-controls (pageChange)="onTableDataChange($event)">
-            </pagination-controls>
+          <!-- pagination -->
+          <div class="row pagination">
+            <div class="mt-4 mx-auto">
+              <pagination-controls (pageChange)="onTableDataChange($event)">
+              </pagination-controls>
+            </div>
           </div>
-        </div>
 
-      </ng-template>
+        </ng-template>
 
-      <!-- spinner template -->
-      <ng-template #spinner>
-        <div class="row mx-auto">
-          <div class="container d-flex justify-content-center align-items-center p-5">
-            <app-spinner></app-spinner>
+        <!-- spinner template -->
+        <ng-template #spinner>
+          <div class="row mx-auto">
+            <div class="container d-flex justify-content-center align-items-center p-5">
+              <app-spinner></app-spinner>
 
+            </div>
           </div>
-        </div>
-      </ng-template>
-      <ng-container *ngIf="productsList.length!=0 then products; else spinner"></ng-container>
+        </ng-template>
+        <ng-container *ngIf="productsList.length!=0 then products; else spinner"></ng-container>
+      </div>
     </div>
-  </div>
 
-</div>
-<!-- higher rated products -->
-<div class="container-fluid rating-container">
-  <h3>Higher Rating Product </h3>
-  <app-popular></app-popular>
-</div>
+  </div>
+  <!-- higher rated products -->
+  <div class="container-fluid p-4 border border-left-0 border-right-0 mt-3 mb-3 rating-container">
+    <h3>Higher Rating Products </h3>
+    <!-- <app-popular></app-popular> -->
+    <app-swipper></app-swipper>
+  </div>
 </div>

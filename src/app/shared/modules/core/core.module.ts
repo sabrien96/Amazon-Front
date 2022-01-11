@@ -1,36 +1,38 @@
+import { PopularCardComponent } from './../../components/popular-card/popular-card.component';
+import { PrimengNGModule } from './../primeng-ng/primeng-ng.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from '../../components/spinner/spinner.component';
-import { ProductCardComponent } from '../../components/product-card/product-card.component';
-import { ProductCardDesignComponent } from '../../components/product-card-design/product-card-design.component';
 import { RatingComponent } from '../../components/rating/rating.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { FilterPipe } from '../../pipes/filter.pipe';
-// import { NgxPaginationModule } from 'ngx-pagination';
+import { SwipperComponent } from './../../components/swipper/swipper.component';
+import { SpecialCardComponent } from '../../components/special-card/special-card.component';
 
 
 
 @NgModule({
   declarations: [
     SpinnerComponent,
-    FilterPipe,
-    ProductCardComponent,
-    ProductCardDesignComponent,
+    FilterPipe,   
     RatingComponent,
     NotFoundComponent,
+    SwipperComponent,
+    PopularCardComponent,
+    SpecialCardComponent
   ],
   imports: [
     CommonModule,
-    // NgxPaginationModule
-
+    PrimengNGModule,
   ],
   exports: [
     SpinnerComponent,
     FilterPipe,
-    ProductCardComponent,
-    ProductCardDesignComponent,
     RatingComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SwipperComponent,
+    PopularCardComponent,
+    SpecialCardComponent
   ]
 
 })

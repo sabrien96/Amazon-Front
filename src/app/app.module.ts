@@ -1,8 +1,9 @@
+import { PrimengNGModule } from './shared/modules/primeng-ng/primeng-ng.module';
 import { ProductsModule } from './components/products/products.module';
-import { RatingComponent } from './shared/components/rating/rating.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -17,29 +18,31 @@ import { SwipperDirective } from './shared/directives/swipper.directive';
 import { AllCategoriesComponent } from './components/all-categories/all-categories.component';
 import { SubCategoryComponent } from './components/all-categories/sub-category/sub-category.component';
 import { CoreModule } from './shared/modules/core/core.module';
-import { PopularComponent } from './components/home/popular/popular.component';
 import { SortPipe } from './shared/pipes/sort.pipe';
-import { SwipperComponent } from './shared/components/swipper/swipper.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomePageComponent,
-    PopularComponent,
     CarouselComponent,
     SwipperDirective,
     AllCategoriesComponent,
     SubCategoryComponent,
     SortPipe,
-    SwipperComponent,
+    
+        // SwipperComponent,
     // ProductsComponent
 
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
+    PrimengNGModule,
     ProductsModule,
     HeaderModule,
     ReactiveFormsModule,
@@ -52,8 +55,6 @@ import { SwipperComponent } from './shared/components/swipper/swipper.component'
       }
     }),
     NgxPaginationModule,
-
-
 
   ],
   providers: [],
