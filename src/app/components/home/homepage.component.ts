@@ -17,7 +17,7 @@ import {
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-
+  higherRatingList:IProduct[]=[];
   productsList: IProduct[] = [];
   originalProductsFilter: IProduct[] = [];
   loading: boolean;
@@ -46,13 +46,10 @@ export class HomePageComponent implements OnInit {
     this.getAllCategory();
     this.getAllProducts();
     this.fetchProduct();
-
-    $(document).ready(function () {
-
+  $(document).ready(function () {
         $('.custom-select').each(function(){
           $(this).children().first().attr("disabled","disabled");
         })
-      // document ready
     });
   }
 
@@ -69,6 +66,9 @@ export class HomePageComponent implements OnInit {
       this.originalProductsFilter = data;
       this.productsList = [...this.originalProductsFilter];
       this.loading = true;
+      this.higherRatingList=this.productsList.filter((ele)=>{
+        return ele.rating>=4;
+      })
     });
   }
   //filter based on checkbox option

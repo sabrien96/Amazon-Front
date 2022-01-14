@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { StoreService } from './../../../shared/services/store.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -9,27 +10,9 @@ import { FilterService } from '../../../shared/services/filter.service';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit {
-
-
-  private isLoginsub: Subscription = new Subscription;
-  isLogin: boolean = false;
-
-  lenghtOfItems: number = 0;
-  auth = false;
-  username: string = '';
-  SearchForm = this.formBuilder.group({
-    search: ['', Validators.required],
-  });
-  constructor(
-    private router: Router,
-    private filterServe: FilterService,
-    private formBuilder: FormBuilder,
-
-    // private localStorage:LocalStorageService
-  ) { }
-  @Input()
-  isVisible = false;
-  isOpen = false;
+  @Input() isVisible = false;
+  cartCounter:number=0;
+  username='';
   showSearch = false;
   categeories: any;
   subCategeories = [
@@ -46,15 +29,26 @@ export class MainHeaderComponent implements OnInit {
     'skinCare',
     'hairCare',
   ];
+  SearchForm = this.formBuilder.group({
+    search: ['', Validators.required],
+  });
+  constructor(
+    private router: Router,
+    private filterServe: FilterService,
+    private formBuilder: FormBuilder,
+    private storeServ:StoreService
+    ) {
+      setTimeout(() => {
+        this.username='sabrien';
+      }, 5000);
+     }
+
   go() {
     this.router.navigate(['/']);
   }
   ngOnInit(): void {
-    //check user login or not
-    // this.isLoginsub = false;
-
     this.getCategories();
-    // this.getNumberOfCarts();
+    this.getCartCount();
 
   }
   
@@ -88,22 +82,10 @@ export class MainHeaderComponent implements OnInit {
 
   ngOnChanges(changes: any) {
     this.isVisible = changes.isVisible.currentValue;
-    // this.getUserame();
-  }
-  openNav() {
-    this.isOpen = !this.isOpen;
-    // let body = document.getElementsByTagName('body')[0];
-    // body.classList.add('body-landing');
-  }
-  closeNav() {
-    this.isOpen = false;
-  }
+     }
+  
 
-  itemPress(item: any) {
-    console.log("item pressed", item.id);
-
-    this.router.navigate([item.routerLink, item.id]);
-  }
+ 
   navigateToForm(index: any) {
     switch (index) {
       case 1:
@@ -114,14 +96,16 @@ export class MainHeaderComponent implements OnInit {
         break;
     }
   }
-  navigateToCart() {
-    this.router.navigate(['/shopping_cart']);
+  
+  navigateToUser(link:string){
+    console.log('link: ',link);
+    
+    this.router.navigate([`/user/${link}`])
   }
   showHideSearch() {
     this.showSearch = !this.showSearch;
   }
-  //get data to filter
-  //get all categories
+  
   getCategories() {
     this.filterServe.getAllCategory().subscribe(
       (data) => {
@@ -173,15 +157,15 @@ export class MainHeaderComponent implements OnInit {
       this.search(form.value.search);
     }
   }
-
-
-  ngOnDestroy(): void {
-    this.isLoginsub.unsubscribe()
+  sumbitSearch(){
   }
-  logout() {
-    this.auth = false;
-    this.username = "";
-
+  addOverlay(){
+    console.log("fire event");
+   this.storeServ.setOverlayListener(true);   
   }
-
+  getCartCount(){
+    this.storeServ.getCartCountListner().subscribe((response)=>{
+      this.cartCounter=response;
+    })
+  }
 }

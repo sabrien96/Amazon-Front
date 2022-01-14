@@ -144,7 +144,7 @@
             currentPage: page,
             totalItems: count
           };let i = index">
-              <app-popular-card [product]="item"></app-popular-card>
+              <app-main-card [product]="item"></app-main-card>
             </div>
           </div>
 
@@ -175,7 +175,6 @@
   <!-- higher rated products -->
   <div class="container-fluid p-4 border border-left-0 border-right-0 mt-3 mb-3 rating-container">
     <h3>Higher Rating Products </h3>
-    <!-- <app-popular></app-popular> -->
-    <app-swipper></app-swipper>
+    <app-swipper [list]="higherRatingList"></app-swipper>
   </div>
 </div>

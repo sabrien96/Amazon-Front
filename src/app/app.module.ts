@@ -1,3 +1,4 @@
+import { UserPropertiesModule } from './components/user-properties/user-properties.module';
 import { PrimengNGModule } from './shared/modules/primeng-ng/primeng-ng.module';
 import { ProductsModule } from './components/products/products.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -31,9 +32,6 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     AllCategoriesComponent,
     SubCategoryComponent,
     SortPipe,
-    
-        // SwipperComponent,
-    // ProductsComponent
 
   ],
   imports: [
@@ -45,6 +43,7 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     PrimengNGModule,
     ProductsModule,
     HeaderModule,
+    UserPropertiesModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',

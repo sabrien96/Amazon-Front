@@ -54,8 +54,7 @@ export class CarouselComponent implements OnInit {
       icon: `${this.path}icons_fashion.png`,
       router: '/products/3',
     },
-  ];
-  remainderDeals = [
+ 
     {
       label: 'Toys',
       icon: `${this.path}icons_toys.png`,

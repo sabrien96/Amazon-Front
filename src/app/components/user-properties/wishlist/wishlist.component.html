@@ -1,0 +1,48 @@
+<div class="container">
+  <!-- <ng-template #spinner>
+    <app-spinner></app-spinner>
+   </ng-template> -->
+  <!-- <ng-template #wrapper> -->
+  <div class="row p-2">
+    <div class="col">
+      <h4>Wish Lists ({{wishList.length}})</h4>
+    </div>
+  </div>
+  <div class="row" *ngFor="let item of wishList">
+    <div class="card col-sm-7 shadow mb-2">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-5">
+            <img [src]="item.image[0]" alt="" data-toggle="popover" [title]="item.name" data-content=""
+              class="card-img-bottom  d-block">
+          </div>
+          <div class="col-sm-7">
+            <div class="row">
+              <div class="col">
+                <p class="text-muted">{{item.price}}EGP</p>
+              </div>
+              <div class="col">
+                <p class="text">{{item.name|titlecase}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col">
+            <button class="btn remove-btn">Remove<i class="far fa-trash-alt"></i>
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn add-btn">
+              Add To<i class="fas fa-shopping-cart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </ng-template> -->
+  <!-- <ng-container  *ngIf="loading; then spinner; else wrapper"></ng-container> -->
+</div>

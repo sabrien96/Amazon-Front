@@ -1,0 +1,57 @@
+// h3{
+//   // font-size: 1.2em;
+//   // font-weight: 300;
+//   line-height: 1.7em;
+//   text-shadow: 2px 2px 5px black;
+//   color: chocolate;
+// }
+a {
+  color: #fff;
+  transform: all 0.3s;
+  cursor: pointer;
+}
+a:hover{
+
+  color: rgb(233, 138, 71);
+}
+a:focus {
+  color: chocolate;
+}
+.sidebar.active {
+  margin-left: -250px;
+}
+.wrapper {
+  display: flex;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+#sidebar {
+  // min-width: 250px;
+  // max-width: 250px;
+  color: white;
+  transition: all 0.3s;
+}
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+#sidebarcollapse {
+  color: chocolate;
+  outline: solid 1px chocolate;
+}
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    margin-left: -250;
+  }
+  #sidebar.active {
+    margin-left: 0px;
+    // background-color: ;
+  }
+  #sidebarcollapse span {
+    display: none;
+  }
+}

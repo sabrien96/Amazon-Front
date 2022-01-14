@@ -3,7 +3,7 @@
   <div class="carousel-inner ">
     <div class="carousel-item active">
       <div class="category-container row">
-        <div class="items-container col-sm"  *ngFor="let item of allDeals">
+        <div class="items-container col-sm"  *ngFor="let item of allDeals|slice:0:5">
           <a [routerLink]="item.router">
             <img [src]="item.icon" alt="">
             <h6>{{item.label}}</h6>
@@ -13,7 +13,7 @@
     </div>
     <div class="carousel-item">
       <div class="category-container row">
-        <div class="items-container col-sm" *ngFor="let item of remainderDeals">
+        <div class="items-container col-sm" *ngFor="let item of allDeals|slice:6:11">
          <a [routerLink]="item.router">
           <img [src]="item.icon" alt="">
           <h6>{{item.label}}</h6>
@@ -21,6 +21,17 @@
         </div>
       </div>
     </div>
+    <div class="carousel-item">
+      <div class="category-container row">
+        <div class="items-container col-sm" *ngFor="let item of allDeals|slice:12:18">
+         <a [routerLink]="item.router">
+          <img [src]="item.icon" alt="">
+          <h6>{{item.label}}</h6>
+         </a>
+        </div>
+      </div>
+    </div>
+   
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

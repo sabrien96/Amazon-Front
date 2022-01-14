@@ -1,6 +1,6 @@
-<div class="card p-2" style="width: 12rem;">
-  <a class="product-link">
-    <img [src]="product.image[0]" alt="" class="w-100 d-block">
+<div class="card p-2">
+  <a class="product-link" (click)="navigateTo()" >
+    <img class="card-img-top ml-5 mr-5" [src]="product.image[0]" alt="Card image cap">
     <div class="product-body">
       <p class="brand" style="color: #929292;font-size: 14px;">{{ product.brand|uppercase }} , {{ product.name }} ,
         {{product.description|slice:0:10}} </p>

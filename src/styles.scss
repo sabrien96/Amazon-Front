@@ -1,21 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-$main-color:chocolate;
-$text-color:#fff;
+$main-color: chocolate;
+$text-color: #fff;
 // body {
-  // background-color: red;
-  // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+// background-color: red;
+// font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 // }
 // p {
-  // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+// font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 // }
-.title{
-  background-color: $main-color;
-  // background-image: linear-gradient(chocolate,white);
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.9) !important;
-  text-decoration: none;
-  color:$text-color;
-  font-weight: bolder;
-  font-family: sans-serif;
-  border: 1px solid $main-color;
-  border-radius: 15px 50px;
+.title {
+  // background-color: $main-color;
+  // // background-image: linear-gradient(chocolate,white);
+  // box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.9) !important;
+  // text-decoration: none;
+  // color:$text-color;
+  // font-weight: bolder;
+  // font-family: sans-serif;
+  // border: 1px solid $main-color;
+  // border-radius: 15px 50px;
+  font-style: italic;
+  line-height: 1.7em;
+  text-shadow: 2px 5px 5px black;
+  color: chocolate;
 }

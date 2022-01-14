@@ -1,8 +1,5 @@
 import { FilterService } from './../../services/filter.service';
 import { Component, Input, OnInit } from '@angular/core';
-import * as $ from 'jquery';
-// import {CarouselModule} from 'primeng/carousel';
-import { PrimeNGConfig } from 'primeng/api';
 import { IProduct } from '../../interfaces/product';
 
 
@@ -92,94 +89,17 @@ export class SwipperComponent implements OnInit {
             numScroll: 1
           }
         ];
+        
+        console.log("keys",Object.keys(this.list[0]));
+        
   }
   
   ngOnInit(): void {
 
   }
 
-  // items = [
-  //   {
-  //     stock: "AAPL",
-  //     img: "../.././../../assets/img/1.jpg"
-  //   },
-  //   {
-  //     stock: "F",
-  //     img: "../.././../../assets/img/2.jpg"
-  //   },
-  //   {
-  //     stock: "Q",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "W",
-  //     img: "../.././../../assets/img/4.jpg"
-  //   },
-  //   {
-  //     stock: "E",
-  //     img: "../.././../../assets/img/5.jpg"
-  //   },
-  //   {
-  //     stock: "T",
-  //     img: "../.././../../assets/img/6.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-  //   {
-  //     stock: "Y",
-  //     img: "../.././../../assets/img/3.jpg"
-  //   },
-
-  // ];
+  
+  
   // startIndex: any;
   // lastIndex: any;
   // mediator: any[] = [];

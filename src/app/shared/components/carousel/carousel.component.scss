@@ -1,3 +1,9 @@
+@media only screen and (max-width: 576px) {
+  .category-container{
+    flex-wrap: nowrap;
+    // background-color: chocolate;
+  }
+  }
 
 .category-container {
   height: 15rem;
