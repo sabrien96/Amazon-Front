@@ -1,25 +1,7 @@
-<!-- <div class="container mt-5" class="carousel slide" data-ride="carousel">
-  <div class="row carousel-inner">
-    <div class="col-md-1 btn">
-      <button class=" btn-default shadow-lg left-btn" (click)="leftClick()"> < </button>
-    </div>
-    <div class="col-md-10 content" >
-      <div class="row">
-        <div class="col-sm-3" *ngFor="let item of mediator">
-          <img class="img-thumbnail"  [src]="item.img" width="200" height="150">
-          <h5>{{item.stock}}</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-1 btn">
-      <button class="btn-default shadow-lg" (click)="rightClick()">
-        >
-      </button>
+<div class="container testimonial-group">
+  <div class="row card-deck text-center">
+    <div class="col-3" *ngFor="let prod of list">
+      <app-secondary-card [product]="prod"></app-secondary-card>
     </div>
   </div>
-</div> -->
-
-
-
-
-
+</div>

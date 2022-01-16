@@ -1,6 +1,5 @@
 import { SecondaryCardComponent } from './../../components/secondary-card/secondary-card.component';
 import { MainCardComponent } from './../../components/main-card/main-card.component';
-import { PrimengNGModule } from './../primeng-ng/primeng-ng.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from '../../components/spinner/spinner.component';
@@ -22,7 +21,6 @@ import { SwipperComponent } from './../../components/swipper/swipper.component';
   ],
   imports: [
     CommonModule,
-    PrimengNGModule,
   ],
   exports: [
     SpinnerComponent,

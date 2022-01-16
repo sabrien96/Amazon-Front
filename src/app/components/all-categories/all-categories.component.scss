@@ -1,27 +1,34 @@
 // sm-->576px;
 // md-->768px;
 // lg-->992px;
-@media only screen and (min-width: 768px) {
-  .container {
-    position: absolute;
-    top: 20%;
-  
-    }
-  }
+// @media only screen and (max-width: 991px) {
+//     .carousel-caption {
+//       display: none;
+//     }
+//   }
 //   @media only screen and (min-width: 992px) {
 //     .cate-container {
 //       display: none;
 //     }
 //   }
 
-// h3 a:hover,
-// h3 a:active
-
-.title {
-  text-decoration: underline;
+.carousel-item {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
 }
-.title:hover {
-  background-color: chocolate;
+
+.carousel-item img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.title:hover{
+  transform: scale(1.2);
+  transition: 0.4s;
+  text-decoration: underline;
   color: white;
   cursor: pointer;
+
 }

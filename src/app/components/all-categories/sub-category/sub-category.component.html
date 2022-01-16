@@ -1,14 +1,11 @@
-<div class="row m-4">
-    <div class="col" *ngFor="let subItem of allSubCateList">
-      <div class="card  shadow-lg mx-auto " >
-        <!-- <app-show-all-sub [subItem]='subItem.name'></app-show-all-sub> -->
-        <div class="card-body">
-          <h5 class="card-title" >{{subItem.name|titlecase}} </h5>
-          <img class="card-img-top w-100" src="../../../../../assets/icons/logo_black.jpg" alt="Card image cap">
-          <a class="card-link text-info" (click)="navigateToProducts(subItem.name)" routerLinkActive="router-link-active" >see more </a>
-        </div>
+<div class="row p-3 text-center card-deck testimonial-group border border-secondary border-top-0">
+  <div class="col-3  " *ngFor="let subItem of allSubCateList">
+    <div class="card shadow-lg" >
+      <img class="card-img-top w-100" src="../../../../../assets/icons/logo_black.jpg" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">{{subItem.name|titlecase}}</p>
+        <a class="btn btn-dark" (click)="navigateToProducts(subItem.name)">see more </a>
       </div>
     </div>
   </div>
-
-
+</div>

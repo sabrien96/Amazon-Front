@@ -1,5 +1,4 @@
 import { UserPropertiesModule } from './components/user-properties/user-properties.module';
-import { PrimengNGModule } from './shared/modules/primeng-ng/primeng-ng.module';
 import { ProductsModule } from './components/products/products.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -40,7 +39,6 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    PrimengNGModule,
     ProductsModule,
     HeaderModule,
     UserPropertiesModule,
