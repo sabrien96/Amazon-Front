@@ -15,11 +15,21 @@ export class UserPropertiesComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    $('#openbtn').on('click', () => {
+      $("#mySidenav").width("200px");
+      $("#content").css('margin-left', '200px');
+      console.log('open');
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    });
+
+    $('.closebtn').on('click', () => {
+      $("#mySidenav").width("0");
+      $("#content").css('margin-left', '0');
+      console.log('close');
+      document.body.style.backgroundColor = "white";
+    });
   }
   ngOnChanges(changes: any) {
-    this.toggleSidebar = changes.isOpen.currentValue;
   }
-  toggle() {
-    this.toggleSidebar = !this.toggleSidebar
-  }
+  
 }

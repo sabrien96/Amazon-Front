@@ -5,7 +5,7 @@ export class AuthGuard implements CanActivate{
   canActivate(): boolean  {
     console.log('in auth guard');
     
-    return false;
+    return true;
   }
 
 }

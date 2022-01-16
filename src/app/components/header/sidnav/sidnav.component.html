@@ -1,66 +1,15 @@
-<div class="wrapper">
-  <nav id="sidebar" [style.width]="toggleSidebar ? '250px':'0px'">
-    <div class="sidebar-header">
-      <h3>sidebar header</h3>
-    </div>
-    <ul class="list-unstyled component">
-      <p>Amazon</p>
-      <li>
-        <a href="#home" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-          <span><i class="fas fa-home" style="margin-left: -5px;"></i></span> Home</a>
-        <ul class="collapse list-unstyled" id="home">
-          <li><a href="#">Home one</a></li>
-          <li><a href="#">Home two</a></li>
-          <li><a href="#">Home three</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <span><i class="fas fa-info-circle" style="margin-left: -5px;"></i></span> About</a>
-      </li>
-      <li>
-        <a href="#course" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-          <span><i class="fas fa-home" style="margin-left: -5px;"></i></span>Courses</a>
-        <ul class="collapse list-unstyled" id="course">
-          <li><a href="#">Angular</a></li>
-          <li><a href="#">React</a></li>
-          <li><a href="#">Vuejs</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#career" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-          <span><i class="fas fa-graduation-cap" style="margin-left: -5px;"></i></span>Courses</a>
-        <ul class="collapse list-unstyled" id="career">
-          <li><a href="#">Frontend Developer</a></li>
-          <li><a href="#">Backend Developer</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <span><i class="fas fa-lock" style="margin-left: -5px;"></i></span>Privacy</a>
-      </li>
-      <li>
-        <a href="#">
-          <span><i class="fas fa-phone" style="margin-left: -5px;"></i></span>Contact Us</a>
-      </li>
-      <li></li>
-    </ul>
-  </nav>
-  <div id="content">
-    <nav class="navbar navbar-expend-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <button class="btn btn-outline-info" type="button" id="sidebarcollapse" (click)="toggle()">
-          <i class="fas fa-align-left"></i>
-        </button>
-      </div>
-    </nav>
-    <br><br>
-    <h1>Content of Amazon</h1>
-    <p>Your recently viewed items and featured recommendations
-      › View or edit your browsing historyAfter viewing product detail pages, look here to find an easy way to navigate back to pages you are interested in</p>
-    <p>Your recently viewed items and featured recommendations
-      › View or edit your browsing historyAfter viewing product detail pages, look here to find an easy way to navigate back to pages you are interested in</p>
-    <p>Your recently viewed items and featured recommendations
-      › View or edit your browsing historyAfter viewing product detail pages, look here to find an easy way to navigate back to pages you are interested in</p>
-  </div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<button  id="openbtn" >open</button>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+  sidenav
 </div>

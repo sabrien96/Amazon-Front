@@ -1,9 +1,12 @@
 <div class="row wrapper">
-  <nav id="sideNav" class="nav border border-left-0 bg-dark col-sm-3 col-md-2 pl-3">
+  <nav id="mySidenav" class="nav d-fixed col-sm-3 col-md-2 border border-left-0 bg-dark ">
+
     <ul class="navbar-nav">
-      <div class="text-center">
-        <h3 class="title">Amazon</h3>
-      </div>
+      <li class="nav-item ">
+        <div class="text-center">
+          <h3 class="title">Amazon</h3>
+        </div>
+      </li>
       <li class="nav-item">
         <a routerLink="/user/profile" class="nav-link">
           <i class="far fa-user"></i> Your Profile</a>
@@ -34,7 +37,7 @@
   </nav>
 
   <div id="content" class="col-sm-9 col-md-10">
-    <div class="container-fluid mt-2" [@routingFade]="outletRef.isActivated?outletRef.activatedRoute:''">
+    <div class="container-fluid  mt-2" [@routingFade]="outletRef.isActivated?outletRef.activatedRoute:''">
       <router-outlet #outletRef="outlet"></router-outlet>
     </div>
   </div>

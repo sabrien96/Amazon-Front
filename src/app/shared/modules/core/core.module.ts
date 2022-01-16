@@ -8,7 +8,6 @@ import { RatingComponent } from '../../components/rating/rating.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { SwipperComponent } from './../../components/swipper/swipper.component';
-import * as $ from 'jquery';
 
 
 @NgModule({

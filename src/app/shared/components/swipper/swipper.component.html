@@ -20,24 +20,6 @@
 </div> -->
 
 
-<div class="container">
-  <p-carousel [value]="list"
-    [numVisible]="4"
-    [numScroll]="1"
-    [responsiveOptions]="responsiveOptions"
-    [autoplayInterval]="3000" 
-    [showIndicators]="false"
-    [showNavigators]="false">
-    [circular]="true"
-    <ng-template pTemplate="header">
-    </ng-template>
-    <ng-template let-product pTemplate="item">
-      <div class="product-item">
-        <app-secondary-card [product]="product"></app-secondary-card>
-      </div>
-    </ng-template>
 
-  </p-carousel>
 
-</div>
 

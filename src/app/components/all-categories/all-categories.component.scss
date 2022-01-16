@@ -1,25 +1,26 @@
 // sm-->576px;
 // md-->768px;
 // lg-->992px;
-// @media only screen and (max-width: 991px) {
-//     .carousel-caption {
-//       display: none;
-//     }
-//   }
+@media only screen and (min-width: 768px) {
+  .container {
+    position: absolute;
+    top: 20%;
+  
+    }
+  }
 //   @media only screen and (min-width: 992px) {
 //     .cate-container {
 //       display: none;
 //     }
 //   }
 
-
 // h3 a:hover,
 // h3 a:active
-.title{
 
+.title {
   text-decoration: underline;
 }
-.title:hover{
+.title:hover {
   background-color: chocolate;
   color: white;
   cursor: pointer;
