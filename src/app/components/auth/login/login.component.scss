@@ -1,0 +1,43 @@
+input:focus{
+  box-shadow: 0 0 10px chocolate;
+  border-color: chocolate;
+}
+.btn-continue
+{
+  background-color: chocolate;
+  background-size: 10%;
+  border: 0.1px solid gray;
+}
+i{
+  color: gray;
+}
+.btnCreateAccount{
+  background-color: rgb(241, 236, 236);
+  border: 0.1px solid gray;
+}
+.line {
+  overflow: hidden;
+  text-align: center;
+}
+
+.line:before,
+.line:after {
+  background-color: rgb(207, 192, 192);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.line:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.line:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+

@@ -1,1 +1,105 @@
-<p>signup works!</p>
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center h-100">
+    <!--<div class="col">-->
+    <img src="../../../../assets/icons/logo_white.png" alt="amazon" style="width: 10%; height: 10%" />
+  </div>
+  <div class="row d-flex justify-content-center h-100">
+    <div class="card " style="width: 27%;">
+      <div class="card-body  ">
+        <h2 class="h3 mb-3  fw-normal">Create Account</h2>
+        <div class="form-floating">
+          <div class="row ">
+            <form #form="ngForm" novalidate (ngSubmit)="signup(user)">
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input  type="email" #email="ngModel" [(ngModel)]="user.email" name="email" class="form-control"
+                  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required email>
+              </div>
+              <div *ngIf="email.errors && (email.invalid || email.touched)">
+                <small class="text-danger" *ngIf="email.errors?.['required'] && email.touched">email is
+                  requered</small>
+                <small class="text-danger" *ngIf="email.errors?.['pattern'] ">email must be in format</small>
+              </div>
+              <!-- password -->
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input  type="password" #password="ngModel" [(ngModel)]="user.password" required class="form-control"
+                  placeholder="At least 6 characters" name="password" minlength="6">
+              </div>
+              <small class="text-danger" *ngIf="password.invalid && password.touched">At least 6 characters</small>
+              <!-- confirm password -->
+              <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input  type="password" #confirmPassword="ngModel" ngModel required class="form-control"
+                  placeholder="At least 6 characters" name="Confirmpassword" minlength="6">
+              </div>
+              <small class="text-danger" *ngIf="confirmPassword.invalid && confirmPassword.touched">At least 6
+                characters </small>
+              <small class="text-danger" *ngIf=" confirmPassword.touched &&confirmPassword.value !== password.value">
+                It must be the same password</small>
+
+               <!-- First Name -->
+              <div class="form-group">
+                <label for="firstName" style="float: left;">First Name</label>
+                <input  type="text" #firstName="ngModel"  [(ngModel)]="user.firstName" class="form-control" id="firstName" name="firstName"
+                  required pattern="^[_a-zA-Z]{1}\w+$">
+              </div>
+              <div *ngIf="firstName.errors && (firstName.invalid || firstName.touched)">
+                <small class="text-danger" *ngIf="firstName.errors?.['required'] && firstName.touched">name is
+                  requered</small>
+                <small class="text-danger" *ngIf="firstName.errors?.['pattern'] ">name must start with only charcter
+                  or
+                  underscore
+                </small>
+              </div>
+              <!-- Last Name -->
+              <div class="form-group">
+                <label for="lastName" style="float: left;">Last Name</label>
+                <input  type="text" #lastName="ngModel" [(ngModel)]="user.lastName" class="form-control" id="lastName" name="lastName"
+                  required pattern="^[_a-zA-Z]{1}\w+$">
+              </div>
+              <div *ngIf="lastName.errors && (lastName.invalid || lastName.touched)">
+                <small class="text-danger" *ngIf="lastName.errors?.['required'] && lastName.touched">name is
+                  required</small>
+                <small class="text-danger" *ngIf="lastName.errors?.['pattern'] ">name must start with only charcter
+                </small>
+              </div>
+              
+              <!-- Mobile Number
+              <div class="form-group">
+                <label for="password">Mobile Number</label>
+                <input  type="text" #mobileNumber="ngModel" [(ngModel)]="user.mobileNumber" required class="form-control" name="mobilePhone">
+              </div>
+              <small class="text-danger" *ngIf="mobileNumber.invalid && mobileNumber.touched"> Mobile Phone is
+                Required</small>
+               -->
+              <p>
+                By enrolling a mobile phone number, you consent to
+                receiving automated security notifications via text
+                message from Amazon. You can opt out by removing
+                your mobile number on the Login & Security page
+                located in Your Account settings. Message and data
+                rates may apply.
+              </p>
+              <br>
+              <p>
+                We will send you a text to verify your phone.
+                Message and Data rates may apply.
+              </p>
+              <button class=" btn btn-block btn-continue w-100" type="submit" 
+                [disabled]="form.invalid || confirmPassword.value !== password.value ">continue</button>
+            </form>
+            <div class="row row-Footer-Card">
+              Already have an account? &nbsp; <a [routerLink]="['/auth/login']">Sign in &nbsp;<i
+                  class="fas fa-caret-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <app-footer-auth></app-footer-auth>
+</div>
