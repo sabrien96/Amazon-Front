@@ -63,10 +63,8 @@
               
               <div class="dropdown-menu dropdown-content">
                 <div class="menu_btn_container">
-<<<<<<< HEAD
                   <button (click)="navigateToForm(1)">Sign In</button>
                   <p>New Customer? <a (click)="navigateToForm(2)">Start here</a></p>
-=======
                   <ng-template #signin>
                     <button (click)="navigateToForm(2)">Sign In</button>
                     <p>New Customer? <a (click)="navigateToForm(1)">Start here</a></p>
@@ -76,7 +74,6 @@
                   </ng-template>
                   <ng-container *ngIf="username then logout; else signin"></ng-container>
                   
->>>>>>> a37f8144e3fdb2801a27dd4dabb9b83cec89787e
                   <hr>
                   <div class="container">
                     <div class="row">
