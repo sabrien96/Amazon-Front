@@ -17,7 +17,7 @@ export class AuthService {
     );
   }
   loginUser(user:User){
-    return this.http.post<User>(`${env.api}users/authenticate`,user).pipe(
+    return this.http.post<User>(`${env.api}users/authenticate`,{...user}).pipe(
       catchError(err=>{return throwError(err.message);})
     );
   }

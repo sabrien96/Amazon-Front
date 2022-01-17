@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
     )
   }
   navigateToloLogin() {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/']);
   }
   
 }
