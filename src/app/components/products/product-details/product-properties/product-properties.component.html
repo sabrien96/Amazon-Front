@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-6">
+    <div class="row border border-top-0 border-right-0 border-left-0">
+      <span class="text-color">
+        <a class="">Brand: {{currentProduct.brand|titlecase}}</a></span>
+      <br>
+      <span class="font-weight-normal" style="font-size: 16px;">{{currentProduct.name}}</span>
+      <div class="container">
+        <div class="dropdown">
+          <span class="dropdown-toggle" data-toggle="tooltip" data-placement="bottom"
+            title="{{currentProduct.rating}} out of 5 stars" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <app-rating [value]="currentProduct.rating" [color]="'chocolate'"></app-rating>
+          </span>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row border border-top-0 border-right-0 border-left-0">
+      <p class="font-weight-normal">Price:
+        <span class="text-danger" style="font-size: 20px;">EGP{{currentProduct.price}}</span>
+      </p>
+    </div>
+    <div class="row border border-top-0 border-right-0 border-left-0">
+      <div class=" col-12 my-1" *ngFor="let key of keyFilter">
+        <span class="font-weight-bold">{{key}} : </span> <br>
+        <span class="option btn">{{currentProduct[key]}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="row d-flex justify-content-center align-items-center">
+      <a class="col-sm-2 icon">Share</a>
+      <a class="col-sm-1 icon text-dark"><i class="far fa-envelope"></i></a>
+      <a class="col-sm-1 icon"><i class="fab fa-facebook-square"></i></a>
+      <a class="col-sm-1 icon text-primary"><i class="fab fa-twitter"></i></a>
+      <a class="col-sm-1 icon text-danger"><i class="fab fa-pinterest"></i></a>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="card col-sm-10 text-center">
+        <div class="card-body">
+          <!-- <h5 class="card-title">Special title treatment</h5> -->
+          <p class="card-text">To buy, select <strong>Size</strong></p>
+          <button class="btn btn-warning btn-block cart-btn">Add To Cart</button>
+          <hr>
+          <button class="btn btn-secondary btn-block list-btn">Add To List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

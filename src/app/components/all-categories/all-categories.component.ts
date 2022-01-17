@@ -7,10 +7,11 @@ import { FilterService } from '../../shared/services/filter.service';
   styleUrls: ['./all-categories.component.scss']
 })
 export class AllCategoriesComponent implements OnInit {
-allCateList:any[]=[{
-   name:'category Name',
-
- }];
+allCateList:any[]=[
+  {
+   name:'category1 Name',
+ }
+];
   constructor(public filterServ:FilterService) {
     this.getAllCategories();
 

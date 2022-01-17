@@ -19,7 +19,7 @@ export class ProductsService {
 
   //get product by it's id
   getProductById(id: any): Observable<IProduct> {
-    return this.http.get<IProduct>(`${env.api}/products/${id}`).pipe(
+    return this.http.get<IProduct>(`${env.api}products/${id}`).pipe(
       catchError(err => { return throwError(err.message); })
     )
   }
@@ -32,7 +32,7 @@ export class ProductsService {
         Authorization: `Bearer${this.getToken()}`
       })
     };
-    return this.http.post<IProduct>(`${env.api}/products/`,{...product},options).pipe(
+    return this.http.post<IProduct>(`${env.api}products/`,{...product},options).pipe(
       catchError(err=>{return throwError(err.message);})
     );
   }

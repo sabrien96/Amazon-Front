@@ -8,9 +8,13 @@ import { FilterService } from '../../../shared/services/filter.service';
   styleUrls: ['./sub-category.component.scss']
 })
 export class SubCategoryComponent implements OnInit {
-
   @Input() cateId: any;
-  allSubCateList: any[] = [];
+  allSubCateList: any[] = [
+    {
+      cateId:3,
+      name:'subcategory'
+    },   
+  ];
   constructor(private filterServe: FilterService, private router: Router) {
 
   }

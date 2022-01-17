@@ -8,6 +8,12 @@
   height: fit-content;
 }
 
+.sort-menu{
+  display: flex;
+  justify-content: right;
+  // background-color: transparent !important;
+
+}
 ul {
   list-style-type: none;
   a {
@@ -16,7 +22,7 @@ ul {
 }
 .row2 {
   // border-top: 0.08rem solid gray;
-  border-top: 1px solid rgb(211, 207, 207);
+  // border-top: 1px solid rgb(211, 207, 207);
   min-height: 15rem;
 }
 

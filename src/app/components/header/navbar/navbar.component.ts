@@ -14,11 +14,11 @@ export class NavbarComponent implements OnInit {
     { cateName: "Today's Deals", router:"/"  },
     { cateName: 'Sell', router:""  },
     { cateName: 'Help', router:""  },
-    { cateName: 'Fashion', router:""  },
-    { cateName: 'Grocery' , router:"" },
-    { cateName: 'Perfumes', router:""  },
-    { cateName: 'Mobile Phones' , router:"" },
-    { cateName: 'Electronics', router:""  },
+    { cateName: 'Fashion', router:"/products/3"  },
+    { cateName: 'Grocery' , router:"/products/2" },
+    { cateName: 'Perfumes', router:"/products/3"  },
+    { cateName: 'Mobile Phones' , router:"/products/1" },
+    { cateName: 'Electronics', router:"/products/1"  },
     { cateName: 'Appliances' , router:"" }
   ]
   constructor(private router: Router) { }

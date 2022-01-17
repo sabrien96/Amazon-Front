@@ -12,4 +12,23 @@
 //     }
 //   }
 
+.carousel-item {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
 
+.carousel-item img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.title:hover{
+  transform: scale(1.2);
+  transition: 0.4s;
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+
+}

@@ -1,0 +1,11 @@
+/* The heart of the matter */
+.testimonial-group > .row {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-color: black;
+}
+.testimonial-group > .row > .col-3 {
+  display: inline-block;
+  margin: 2rem 0;
+}

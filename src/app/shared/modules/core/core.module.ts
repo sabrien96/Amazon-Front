@@ -1,36 +1,35 @@
+import { SecondaryCardComponent } from './../../components/secondary-card/secondary-card.component';
+import { MainCardComponent } from './../../components/main-card/main-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from '../../components/spinner/spinner.component';
-import { ProductCardComponent } from '../../components/product-card/product-card.component';
-import { ProductCardDesignComponent } from '../../components/product-card-design/product-card-design.component';
 import { RatingComponent } from '../../components/rating/rating.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { FilterPipe } from '../../pipes/filter.pipe';
-// import { NgxPaginationModule } from 'ngx-pagination';
-
+import { SwipperComponent } from './../../components/swipper/swipper.component';
 
 
 @NgModule({
   declarations: [
     SpinnerComponent,
-    FilterPipe,
-    ProductCardComponent,
-    ProductCardDesignComponent,
+    FilterPipe,   
     RatingComponent,
     NotFoundComponent,
+    SwipperComponent,
+    MainCardComponent,
+    SecondaryCardComponent
   ],
   imports: [
     CommonModule,
-    // NgxPaginationModule
-
   ],
   exports: [
     SpinnerComponent,
     FilterPipe,
-    ProductCardComponent,
-    ProductCardDesignComponent,
     RatingComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SwipperComponent,
+    MainCardComponent,
+    SecondaryCardComponent
   ]
 
 })

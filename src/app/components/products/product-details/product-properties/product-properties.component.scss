@@ -1,0 +1,24 @@
+.icon i{
+  width: 18px;
+  height: 17px
+}
+a:hover{
+  cursor: pointer;
+}
+a:first-child:hover{
+  color: chocolate;
+}
+.cart-btn{
+  border-radius: 20px;
+}
+.list-btn{
+  text-align: left;
+  color: #000;
+  background-color: rgb(207, 207, 207) !important;
+}
+.btn{
+    font-size: 13px;
+    line-height: 29px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}

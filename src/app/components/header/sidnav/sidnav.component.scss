@@ -1,85 +1,49 @@
-p {
-  font-size: 1.2em;
-  font-weight: 300;
-  line-height: 1.7em;
-  color: #999;
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-a,
-a:hover,
-a:focus {
-  color: inherit;
-  text-decoration: none;
-  transform: all 0.3s;
-  border-radius: 0px 30px 30px 0px;
-}
-.sidebar.active {
-  margin-left: -250px;
-}
-.wrapper {
-  display: flex;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-#sidebar {
-  // min-width: 250px;
-  // max-width: 250px;
-  background-color: #263485;
-  color: white;
-  transition: all 0.3s;
-  .sidebar-header {
-    // padding: 20px;
-    background-color: #263485;
-  }
-  ul p {
-    color: #fff;
-    padding: 10px;
-  }
-  ul li a {
-    padding: 10px;
-    font-size: 1.2em;
-    display: block;
-  }
 
-  ul li a:hover {
-    color: #263485;
-    background-color: #fff;
-  }
-  ul li.active > a,
-  a[aria-expended="true"] {
-    color: #263485;
-    background-color: #fff;
-  }
-}
-a[data-toggle="collapse"] {
-  position: relative;
-}
-.dropdown-toggle::after {
-  position: absolute;
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
   display: block;
-  top: 50%;
-  right: 20%;
-}
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
-  background: #4760ee;
-}
-#content {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px;
-  transition: all 0.3s;
+  transition: 0.3s;
 }
 
-@media only screen and (max-width: 768px) {
-  #sidebar {
-    margin-left: -250;
-  }
-  #sidebar.active{
-    margin-left: 0px;
-    // background-color: ;
-  }
-  #sidebarcollapse span{
-    display: none;
-  }
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
