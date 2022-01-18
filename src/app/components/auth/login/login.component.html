@@ -1,1 +1,53 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center h-100">
+        <!--<div class="col">-->
+        <img src="../../../../assets/icons/logo_white.png" alt="amazon" style="width: 10%; height: 10%" />
+    </div>
+    <div class="row d-flex justify-content-center h-100">
+        <div class="card " style="width: 27%;">
+            <div class="card-body  ">
+                <form  #form="ngForm" novalidate (ngSubmit)="login()">
+                    <h2 class="h3 mb-3 fw-normal">Sign-In</h2>
+                    <div class="form-floating">
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" #email="ngModel" name="email" [(ngModel)]="user.email"
+                                class="form-control"
+                                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required
+                                email>
+                        </div>
+                        <div *ngIf="email.errors && (email.invalid || email.touched)">
+                            <small class="text-danger" *ngIf="email.errors?.['required'] && email.touched">email is
+                                requered</small>
+                            <small class="text-danger" *ngIf="email.errors?.['pattern'] ">email must be in
+                                format</small>
+                        </div>
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" #password="ngModel" [(ngModel)]="user.password" required
+                                class="form-control" placeholder="At least 6 characters" name="password" minlength="6">
+                        </div>
+                        <small class="text-danger" *ngIf="password.invalid && password.touched">At least 6
+                            characters</small>
+                        <button class=" btn  btn-continue w-100" type="submit" >continue</button>
+                        <p>By signing in, you agree to Amazon's<a href="#"> Conditions of Use</a> and <a
+                                href="#">privacy Notice</a>.</p>
+                        <a href="#"><i class="fas fa-caret-right"></i>
+                            Need help?
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center ">
+        <p class="line text-secondary" style="width: 27%;">New to Amazon?</p>
+    </div>
+    <div class="row d-flex justify-content-center h-100">
+        <button class=" btn btnCreateAccount" style="width: 27%;" (click)="navigateToLogeIn()">Create your Amazon
+            account</button>
+    </div> <br>
+    <app-footer-auth></app-footer-auth>
+</div>
