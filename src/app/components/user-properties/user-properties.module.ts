@@ -7,6 +7,7 @@ import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule} from '@angular/forms';
+import { CoreModule } from '../../shared/modules/core/core.module';
 @NgModule({
   declarations: [
     UserPropertiesComponent,
@@ -19,6 +20,7 @@ import { FormsModule} from '@angular/forms';
     CommonModule,
     UserPropertiesRoutingModule,
     FormsModule,
+    CoreModule
   ]
 })
 export class UserPropertiesModule { }

@@ -1,48 +1,41 @@
-<div class="container">
-  <!-- <ng-template #spinner>
-    <app-spinner></app-spinner>
-   </ng-template> -->
-  <!-- <ng-template #wrapper> -->
-  <div class="row p-2">
-    <div class="col">
-      <h4>Wish Lists ({{wishList.length}})</h4>
-    </div>
+<div class="row border border-left-0 border-right-0 border-top-0 p-2">
+  <div class="col">
+    <h4>Whish List ({{wishList.length|number}})</h4>
   </div>
-  <div class="row" *ngFor="let item of wishList">
-    <div class="card col-sm-7 shadow mb-2">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-sm-5">
-            <img [src]="item.image[0]" alt="" data-toggle="popover" [title]="item.name" data-content=""
-              class="card-img-bottom  d-block">
-          </div>
-          <div class="col-sm-7">
-            <div class="row">
-              <div class="col">
-                <p class="text-muted">{{item.price}}EGP</p>
-              </div>
-              <div class="col">
-                <p class="text">{{item.name|titlecase}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="row">
-          <div class="col">
-            <button class="btn remove-btn">Remove<i class="far fa-trash-alt"></i>
-            </button>
-          </div>
-          <div class="col">
-            <button class="btn add-btn">
-              Add To<i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- </ng-template> -->
-  <!-- <ng-container  *ngIf="loading; then spinner; else wrapper"></ng-container> -->
 </div>
+<ng-template #list>
+  <div class="row card-deck mb-2">
+    <div class="col-sm-12 card-deck col-md-4">
+      <div class="card text-center  mt-3 w-75 shadow-sm">
+        <img src="../../../../assets/img/3.jpg" class="card-img-top align-self-center" alt="">
+        <div class="card-img-overlay d-flex justify-content-end">
+          <a class="card-link text-secondary remove-icon" data-toggle="tooltip" title="Remove">
+            <i class="fas fa-trash-alt" (click)="removeItem('_id')"></i>
+          </a>
+        </div>
+        <div class="card-body ">
+          <h6 class="card-title">Product Name</h6>
+          <!-- <span class="price-was price dis">EGY {{product.price - (product.price * product.discount/100)}}</span> -->
+          <span class="price-was price dis">Old Price</span>
+          <h4 class="card-text">New Price</h4>
+          <app-rating [value]="4" [color]="'chocolate'"></app-rating>
+          <p class="card-text text-success">Discount</p>
+          <button class="btn bg-dark w-100 ">Add To Cart
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #alert>
+  <div class="row p-5 d-flex justify-content-center align-items-center">
+    <div class="alert  alert-light" role="alert">
+      You are not like any product <a routerLink="/" class="alert-link">Back To Home</a>
+      and add to your list.
+    </div>
+  </div>
+</ng-template>
+<ng-container *ngIf="wishList.length===0 then alert; else list"></ng-container>
+
+
