@@ -1,5 +1,6 @@
-import { UserData } from './../../../shared/my-classes/user.class';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../../shared/interfaces/user';
 
 @Component({
   selector: 'app-profile',
@@ -7,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  userData:UserData=new UserData('sabrien','saber','sabriensaber0@gmail.com','01143775601')
-  constructor() { 
-   
+  userData:User=new User('','','','')
+  constructor(private authServe:AuthService) { 
+    this.getUserInfo();
   }
 
   ngOnInit(): void {
   }
-  
+  getUserInfo(){
+   let userId=localStorage.getItem('userId');
+   if(userId!=null){
+     this.authServe.getUserById(userId).subscribe((response)=>{
+       this.userData=response;
+     })
+   }
+  }
 
 }

@@ -119,26 +119,26 @@
     <div class="col-sm-12 col-md-9">
       <div class="container-fluid">
         <!-- product template -->
-        <div class="row sort-menu pt-3">
-          <div class="col-sm-3 ">
-            <div class="form-group ">
-              <select class="custom-select" (change)="sortBy($event)">
-                <option selected value="">
-                  Sort By
-                </option>
-                <option *ngFor="let field of sortArr">
-                  {{field}}
-                </option>
-              </select>
-              <!-- {{sortFiled}} -->
-            </div>
-
-          </div>
-        </div>
-
+        
         <ng-template #products>
+          <div class="row sort-menu pt-3">
+            <div class="col-sm-3 ">
+              <div class="form-group ">
+                <select class="custom-select" (change)="sortBy($event)">
+                  <option selected value="">
+                    Sort By
+                  </option>
+                  <option *ngFor="let field of sortArr">
+                    {{field}}
+                  </option>
+                </select>
+                <!-- {{sortFiled}} -->
+              </div>
+  
+            </div>
+          </div>
 
-          <div class="row card-deck pt-3">
+          <div class="row  pt-3">
             <!-- <div class="col-sm-6 col-md-4 item-container class="card-group" mt-2" *ngFor="let item of productsList|sort:[sortFiled,'desc']|paginate : { -->
             <div class="col-sm-6 col-md-4 item-container mt-2" *ngFor="let item of productsList|sort:[sortFiled,'desc']|paginate : {
             itemsPerPage: tableSize,
@@ -171,8 +171,8 @@
         <ng-container *ngIf="productsList.length!=0 then products; else spinner"></ng-container>
       </div>
     </div>
-
   </div>
+  
   <!-- higher rated products -->
   <div class="container-fluid p-4 border border-left-0 border-right-0 mt-3 mb-3 rating-container">
     <h3>Higher Rating Products </h3>

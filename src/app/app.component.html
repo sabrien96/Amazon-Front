@@ -1,9 +1,7 @@
 <app-header *ngIf="!showHeader" class="mainHeader" [isVisible]="isVisible">
 </app-header>
-<div class="container-fluid" >
   <div id="overlay" *ngIf="overlay" (click)="overlay=false"></div>
   <router-outlet ></router-outlet>
-</div>
 <app-footer *ngIf="!showHeader"></app-footer>
 
 

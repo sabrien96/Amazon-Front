@@ -1,8 +1,8 @@
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { StoreService } from './../../../shared/services/store.service';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component,Input, OnInit} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { FilterService } from '../../../shared/services/filter.service';
 @Component({
   selector: 'app-main-header',
@@ -12,7 +12,7 @@ import { FilterService } from '../../../shared/services/filter.service';
 export class MainHeaderComponent implements OnInit {
   @Input() isVisible = false;
   cartCounter:number=0;
-  username='';
+  username:any;
   showSearch = false;
   categeories: any;
   subCategeories = [
@@ -36,11 +36,13 @@ export class MainHeaderComponent implements OnInit {
     private router: Router,
     private filterServe: FilterService,
     private formBuilder: FormBuilder,
-    private storeServ:StoreService
+    private storeServ:StoreService,
+    private authServe:AuthService
     ) {
-      setTimeout(() => {
-        this.username='sabrien';
-      }, 5000);
+      this.authServe.getLoginistner().subscribe((response)=>{
+        this.username=response;
+        console.log('username',response); 
+      })
      }
 
   go() {
@@ -49,7 +51,7 @@ export class MainHeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getCategories();
     this.getCartCount();
-
+    
   }
   
   menuLisItems = [
@@ -89,17 +91,16 @@ export class MainHeaderComponent implements OnInit {
   navigateToForm(index: any) {
     switch (index) {
       case 1:
-        this.router.navigate(['/auth/signup']);
-        break;
-      case 2:
         this.router.navigate(['/auth/login']);
+        break;
+        case 2:
+        this.router.navigate(['/auth/signup']);
         break;
     }
   }
   
   navigateToUser(link:string){
-    console.log('link: ',link);
-    
+    console.log('link: ',link); 
     this.router.navigate([`/user/${link}`])
   }
   showHideSearch() {

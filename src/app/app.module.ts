@@ -14,7 +14,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderModule } from './components/header/header.module';
 import { HomePageComponent } from './components/home/homepage.component';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
-import { SwipperDirective } from './shared/directives/swipper.directive';
 import { AllCategoriesComponent } from './components/all-categories/all-categories.component';
 import { SubCategoryComponent } from './components/all-categories/sub-category/sub-category.component';
 import { CoreModule } from './shared/modules/core/core.module';
@@ -27,7 +26,6 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     FooterComponent,
     HomePageComponent,
     CarouselComponent,
-    SwipperDirective,
     AllCategoriesComponent,
     SubCategoryComponent,
     SortPipe,

@@ -30,7 +30,7 @@ export class AppComponent  implements OnInit{
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         this.showHeader = ['/auth/login', '/auth/signup', '/admin', '/admin/products',
-          '/admin/users', '/admin/dashboard'].includes(this.router.url);
+          '/admin/users', '/admin/dashboard', '/admin/orders'].includes(this.router.url);
       }
     });
   } 

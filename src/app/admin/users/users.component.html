@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  
+  <div class="row border border-left-0 border-right-0 border-top-0 p-2">
+    <div class="col">
+      <h4>Users List ({{'0'}})</h4>
+    </div>
+  </div>
+    <div class="table-responsive-sm">
+      <table class="table table-hover text-center table-striped">
+        <thead class="bg-dark text-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">F name </th>
+            <th scope="col">L name</th>
+            <th scope="col">Email</th>       
+            <th scope="col">Orders</th>       
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{{1}}</td>
+              <td>{{'Sabrien'}}</td>
+              <td>{{'Saber'}}</td>
+              <td>{{'sabriensaber0@gmail.com'}}</td>
+              <td (click)="getUserOrders('id')">{{'Orders'}}</td>
+            </tr>
+          </tbody>
+          <tr>
+            <td>{{1}}</td>
+            <td>{{'Sabrien'}}</td>
+            <td>{{'Saber'}}</td>
+            <td>{{'sabriensaber0@gmail.com'}}</td>
+            <td>{{'Orders'}}</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+  <ng-template #name>
+    <a href="javascript:void(0)" class="closebtn" (click)="showFlag=!showFlag">&times;</a>
+    {{'orderList'}}
+  </ng-template>
+  <ng-container *ngIf="showFlag then name"></ng-container>
+
+  
+  
+  
+  
+  

@@ -5,7 +5,7 @@
       <div class="col-md-7 col-lg-8 ">
         <div class="row  no-gutters left-container align-items-center">
           <div class="col-md-2 logo col-3">
-            <a class="navbar-brand" routerLink="/">   
+            <a class="navbar-brand" routerLink="/">
               <img src="../../../../assets/icons/logo_black.jpg" alt="amazon" style="width: 80%; height: 100%" />
             </a>
           </div>
@@ -23,7 +23,8 @@
                   <option><a class="dropdown-item">Category 3 </a></option>
                 </ul>
               </button>
-              <input type="text" class="form-control col-sm-8 col-md-10" (focus)="addOverlay()"  #search placeholder="what are you looking for?" />
+              <input type="text" class="form-control col-sm-8 col-md-10" (focus)="addOverlay()" #search
+                placeholder="what are you looking for?" />
               <button type="submit" class="col-sm-2 col-md-1 search-btn"><i class="fas fa-search"></i></button>
             </form>
           </div>
@@ -58,22 +59,21 @@
                   Hello,Sign in <i class="far fa-user"></i>
                 </a>
               </ng-template>
-              
+
               <ng-container *ngIf="username then login; else notLogin"></ng-container>
-              
+
               <div class="dropdown-menu dropdown-content">
                 <div class="menu_btn_container">
-                  <button (click)="navigateToForm(1)">Sign In</button>
-                  <p>New Customer? <a (click)="navigateToForm(2)">Start here</a></p>
                   <ng-template #signin>
-                    <button (click)="navigateToForm(2)">Sign In</button>
-                    <p>New Customer? <a (click)="navigateToForm(1)">Start here</a></p>
+                    <button (click)="navigateToForm(1)">Sign In</button>
+                    <p>New Customer? <a (click)="navigateToForm(2)">Start here</a></p>
                   </ng-template>
+
                   <ng-template #logout>
                     <button>Logout</button>
                   </ng-template>
                   <ng-container *ngIf="username then logout; else signin"></ng-container>
-                  
+
                   <hr>
                   <div class="container">
                     <div class="row">
@@ -87,8 +87,8 @@
                         <a (click)="navigateToUser('orders')">Your Orders</a>
                         <a (click)="navigateToUser('address')">Your Addresses</a>
                         <a (click)="navigateToUser('wishlist')">Your Lists</a>
-                        <a >Your Recommendations</a>
-                        <a >Your Seller Account</a>
+                        <a>Your Recommendations</a>
+                        <a>Your Seller Account</a>
                       </div>
                     </div>
                   </div>
@@ -103,12 +103,12 @@
 
           <!-- cart -->
           <div class="col d-flex justify-content-center">
-           <div class="cart">
-            <button class="cart-icon" (click)="navigateToUser('cart')">
-              <div class="cart-count"><span>{{cartCounter}}</span></div>
-              <i class="fas fa-shopping-cart  icon"></i>
-            </button>
-           </div>
+            <div class="cart">
+              <button class="cart-icon" (click)="navigateToUser('cart')">
+                <div class="cart-count"><span>{{cartCounter}}</span></div>
+                <i class="fas fa-shopping-cart  icon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

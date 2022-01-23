@@ -10,24 +10,24 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class SignupComponent implements OnInit {
   // user = new User("","","","","")
-  user = new User("","","","")
+  user = new User("", "", "", "")
 
   constructor(
     private router: Router,
-    private authSer:AuthService
+    private authSer: AuthService
   ) { }
 
   ngOnInit(): void {
   }
-  signup(userData:User)
-  {
-    this.authSer.addUser(userData).subscribe(
-      data =>console.log('success',data),
-      error=>console.log('Error!',error)
-    )
-  }
-  navigateToloLogin() {
+  signup(userData: User) {
+    this.authSer.addUser(userData).subscribe((response) => {
+      console.log('success',response)  
+      this.authSer.setLoginListener(true);
+      // localStorage.setItem('username',userData.firstName);
+    },
+    err => console.log('Error!', err));
     this.router.navigate(['/']);
   }
-  
+ 
+
 }

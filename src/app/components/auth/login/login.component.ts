@@ -25,9 +25,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/auth/signup']);
   }
   login(){
-    this.authServ.loginUser(this.user).subscribe(
-      data=>console.log('success',data),
-      error=>console.log('Error!',error)
-    )
+    this.authServ.loginUser(this.user)
+        // this.authServ.setLoginListener('');
+        console.log(this.user);
+        
+        
   }
 }

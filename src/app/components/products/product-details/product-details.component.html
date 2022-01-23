@@ -6,9 +6,18 @@
     </div>
     <div class="col-sm-6">
       <!-- details -->
-      <app-product-properties [currentProduct]="productItem"></app-product-properties>
+      <app-product-properties (addedItem)="addFlag=($event)" [currentProduct]="productItem"></app-product-properties>
     </div>
   </div>
+  <ng-template #alert>
+    <div class="row p-5 d-flex justify-content-center align-items-center">
+      <div class="alert  alert-success" role="alert">
+       {{'your product are added successfully'|titlecase}}
+      </div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="addFlag then alert;"></ng-container>
+  
   <hr>
   <div class="row">
     <div class="col-sm-12">

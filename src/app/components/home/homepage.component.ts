@@ -1,5 +1,6 @@
+import { LocalStorageService } from './../../shared/services/local-storage.service';
+import { IProduct } from './../../shared/interfaces/product';
 import { FilterService } from '../../shared/services/filter.service';
-import { IProduct } from '../../shared/interfaces/product';
 import { ProductsService } from '../../shared/services/products.service';
 import { Component, OnInit, Output } from '@angular/core';
 import {
@@ -20,11 +21,11 @@ export class HomePageComponent implements OnInit {
   higherRatingList:IProduct[]=[];
   productsList: IProduct[] = [];
   originalProductsFilter: IProduct[] = [];
+  addedItem:boolean=false;
   loading: boolean;
   notFound: boolean = false;
   allCategories: any;
   checkboxForm: FormGroup;
-  // POSTS:IProduct[]=[];
   page = 1;
   count = 0;
   tableSize = 20;
@@ -34,7 +35,10 @@ export class HomePageComponent implements OnInit {
   constructor(
     private productServe: ProductsService,
     private filterServe: FilterService,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    private localStorageServ:LocalStorageService
+    ) {
+
     this.checkboxForm = this.fb.group({
       checkbox: '',
       myChoices: new FormArray([]),
@@ -179,7 +183,11 @@ export class HomePageComponent implements OnInit {
     this.fetchProduct();
   }
   sortBy(event: any) {
-    // console.log("sort event: ", event.target.value);
     this.sortFiled=event.target.value;
+  }
+  // add item to whishlist
+  addToWishList(product:IProduct){
+   this.localStorageServ.addToWishList(product); 
+   this.addedItem=true;
   }
 }

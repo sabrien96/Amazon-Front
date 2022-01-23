@@ -1,0 +1,30 @@
+<div class="container-fluid ">
+  <div class="row  wrapper">
+    
+      <nav id="mySidenav" class="nav d-fixed bg-dark  col-sm-3  ">
+        <ul class="navbar-nav">
+          <li class="nav-item align-self-center">
+              <h4 class="title">Admin Panel</h4>
+          </li>
+          <li class="nav-item ">
+            <a routerLink="/admin/dashboard" class="nav-link">
+              <i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/products" class="nav-link">
+              <i class="fas fa-user"></i>Products</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/users" class="nav-link">
+              <i class="fas fa-user"></i>Users</a>
+          </li>
+        
+        </ul>
+      </nav>
+    
+    <div class="col-sm-9 ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

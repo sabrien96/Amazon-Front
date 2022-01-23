@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../../../shared/services/local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../../shared/interfaces/product';
 
@@ -7,17 +8,26 @@ import { IProduct } from '../../../shared/interfaces/product';
   styleUrls: ['./wishlist.component.scss']
 })
 export class WishlistComponent implements OnInit {
-wishList:IProduct[]=[]
-  constructor() { }
+wishList:any=[];
+  constructor(private localStorageServ:LocalStorageService) { 
+    this.getWishList();
+   
+  }
 
   ngOnInit(): void {
   }
 
+  getWishList(){
+  this.wishList= this.localStorageServ.get('favouriteList');
+  }
   removeItem(productId:any){
-    this.wishList=this.wishList.filter((ele:any)=>{
+    let newList;
+    newList=this.wishList.filter((ele:any)=>{
       if(ele._id!=productId){
         return ele;
       }
-    })
+    });
+    this.wishList=newList;
+    localStorage.setItem('favouriteList',this.wishList+'');
   }
 }

@@ -1,7 +1,7 @@
 import { ProductsService } from './../../../shared/services/products.service';
 import { IProduct } from './../../../shared/interfaces/product';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-product-details',
@@ -10,6 +10,7 @@ import * as $ from 'jquery';
 })
 export class ProductDetailsComponent implements OnInit {
   productId: any;
+  @Output() addFlag:any;
   productItem: IProduct = {
     name: "",
     image: [],
